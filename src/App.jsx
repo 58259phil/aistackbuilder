@@ -144,7 +144,7 @@ export default function App() {
     track('email_submitted', { type: channelType })
 
     try {
-      const res = await fetch('/api/subscribe', {
+      const res = await fetch('/.netlify/functions/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
