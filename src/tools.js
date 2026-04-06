@@ -34,7 +34,7 @@ export const TOOLS = [
     id: 'elevenLabs', name: 'ElevenLabs', icon: '🔊', cat: 'Voiceover', price: 22, tier: 'paid',
     desc: 'The #1 AI voice tool. Ultra-realistic voices and instant voice cloning. Essential for faceless channels.',
     commission: '22% recurring for 12 months', commissionNum: 4.84, cookie: '90 days',
-    affiliateUrl: 'https://elevenlabs.io/affiliates',
+    affiliateUrl: 'https://try.elevenlabs.io/l55nms662wgu',
     tags: ['voiceover'], types: ['faceless','tutorial'], minExp: 'new', hasTrial: true,
   },
   {
