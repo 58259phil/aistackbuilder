@@ -11,7 +11,7 @@ export const TOOLS = [
     id: 'koala', name: 'Koala AI', icon: '🐨', cat: 'Scripting', price: 25, tier: 'paid',
     desc: 'AI writer that generates YouTube scripts, descriptions and hooks using live SERP data. Powered by GPT-4o with built-in SEO research.',
     commission: '30% lifetime recurring', commissionNum: 7.5, cookie: '60 days',
-    affiliateUrl: 'https://koala.sh/pages/affiliate',
+    affiliateUrl: 'https://koala.sh/?via=phillip-bates',
     tags: ['scripting'], types: ['talking','tutorial'], minExp: 'growing', hasTrial: true,
   },
   {
