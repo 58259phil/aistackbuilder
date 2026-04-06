@@ -11,14 +11,14 @@ export const TOOLS = [
     id: 'koala', name: 'Koala AI', icon: '🐨', cat: 'Scripting', price: 25, tier: 'paid',
     desc: 'AI writer that generates YouTube scripts, descriptions and hooks using live SERP data. Powered by GPT-4o with built-in SEO research.',
     commission: '30% lifetime recurring', commissionNum: 7.5, cookie: '60 days',
-    affiliateUrl: 'https://friends.koala.sh/signup',
+    affiliateUrl: 'https://koala.sh/pages/affiliate',
     tags: ['scripting'], types: ['talking','tutorial'], minExp: 'growing', hasTrial: true,
   },
   {
     id: 'writesonic', name: 'Writesonic', icon: '📝', cat: 'Scripting', price: 16, tier: 'paid',
     desc: 'AI script and content writer with SEO built in. Covers YouTube scripts, descriptions, hooks, and repurposed blog posts.',
     commission: '30% lifetime recurring', commissionNum: 4.8, cookie: '30 days',
-    affiliateUrl: 'https://writesonic.com/affiliates',
+    affiliateUrl: 'https://affiliates.writesonic.com/',
     tags: ['scripting'], types: ['faceless','talking','tutorial','podcast'], minExp: 'new', hasTrial: true,
   },
   {
