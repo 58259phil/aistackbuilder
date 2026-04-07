@@ -11,7 +11,7 @@ export const TOOLS = [
     id: 'koala', name: 'Koala AI', icon: '🐨', cat: 'Scripting', price: 25, tier: 'paid',
     desc: 'AI writer that generates YouTube scripts, descriptions and hooks using live SERP data. Powered by GPT-4o with built-in SEO research.',
     commission: '30% lifetime recurring', commissionNum: 7.5, cookie: '60 days',
-    affiliateUrl: 'https://koala.sh/?via=phillip-bates',
+    affiliateUrl: 'https://koala.sh/pages/affiliate',
     tags: ['scripting'], types: ['talking','tutorial'], minExp: 'growing', hasTrial: true,
   },
   {
@@ -25,7 +25,7 @@ export const TOOLS = [
     id: 'grammarly', name: 'Grammarly', icon: '✅', cat: 'Scripting', price: 0, tier: 'freemium',
     desc: 'AI grammar and clarity editor. Every creator needs polished scripts and descriptions.',
     commission: '$0.20 free signup / $20 per upgrade', commissionNum: 3, cookie: '90 days',
-    affiliateUrl: null,
+    affiliateUrl: 'https://www.grammarly.com/affiliates',
     tags: ['scripting'], types: ['faceless','talking','tutorial','podcast'], minExp: 'new', hasTrial: true,
   },
 
@@ -34,7 +34,7 @@ export const TOOLS = [
     id: 'elevenLabs', name: 'ElevenLabs', icon: '🔊', cat: 'Voiceover', price: 22, tier: 'paid',
     desc: 'The #1 AI voice tool. Ultra-realistic voices and instant voice cloning. Essential for faceless channels.',
     commission: '22% recurring for 12 months', commissionNum: 4.84, cookie: '90 days',
-    affiliateUrl: 'https://try.elevenlabs.io/l55nms662wgu',
+    affiliateUrl: 'https://elevenlabs.io/affiliates',
     tags: ['voiceover'], types: ['faceless','tutorial'], minExp: 'new', hasTrial: true,
   },
   {
@@ -48,7 +48,7 @@ export const TOOLS = [
     id: 'lalal', name: 'LALAL.AI', icon: '🎵', cat: 'Audio', price: 15, tier: 'paid',
     desc: 'AI audio stem separator — remove background music, isolate vocals, clean up messy interview audio.',
     commission: '30% per sale', commissionNum: 4.5, cookie: '180 days',
-    affiliateUrl: 'https://www.lalal.ai/?fp_ref=phillip53',
+    affiliateUrl: 'https://www.lalal.ai/affiliate-program/',
     tags: ['voiceover','editing'], types: ['podcast','talking'], minExp: 'growing', hasTrial: true,
   },
   {
@@ -87,7 +87,7 @@ export const TOOLS = [
     id: 'invideo', name: 'InVideo AI', icon: '🎥', cat: 'Video creation', price: 25, tier: 'paid',
     desc: 'Turn a text prompt into a full video with footage, voiceover, and captions — in minutes.',
     commission: '25% recurring', commissionNum: 6.25, cookie: '60 days',
-    affiliateUrl: 'https://invideo.io/affiliate/',
+    affiliateUrl: 'https://app.impact.com/campaign-promo-signup/InVideo.brand',
     tags: ['editing','voiceover','captions'], types: ['faceless'], minExp: 'new', hasTrial: true,
   },
   {
@@ -107,17 +107,10 @@ export const TOOLS = [
     tags: ['avatar','voiceover'], types: ['faceless','tutorial'], minExp: 'new', hasTrial: true,
   },
   {
-    id: 'synthesia', name: 'Synthesia', icon: '🧑‍💼', cat: 'AI avatar', price: 29, tier: 'paid',
-    desc: 'Professional AI avatars in 120+ languages. No camera or studio needed — create explainer videos in minutes.',
-    commission: '20% recurring for 12 months', commissionNum: 5.8, cookie: '60 days',
-    affiliateUrl: 'https://www.synthesia.io/partners/affiliates',
-    tags: ['avatar','voiceover'], types: ['faceless','tutorial'], minExp: 'new', hasTrial: true,
-  },
-  {
     id: 'heygen', name: 'HeyGen', icon: '🤖', cat: 'AI avatar', price: 29, tier: 'paid',
-    desc: 'Realistic AI avatars with voice cloning in 175+ languages. Top choice for faceless product videos.',
-    commission: '20% recurring', commissionNum: 5.8, cookie: '60 days',
-    affiliateUrl: 'https://www.heygen.com/affiliate',
+    desc: 'Realistic AI avatars with voice cloning in 175+ languages. No camera or studio needed — create professional videos in minutes.',
+    commission: '35% for 3 months', commissionNum: 10.15, cookie: '30 days',
+    affiliateUrl: 'https://heygen.getrewardful.com/signup',
     tags: ['avatar','voiceover'], types: ['faceless','tutorial'], minExp: 'new', hasTrial: true,
   },
 
