@@ -25,7 +25,7 @@ export const TOOLS = [
     id: 'grammarly', name: 'Grammarly', icon: '✅', cat: 'Scripting', price: 0, tier: 'freemium',
     desc: 'AI grammar and clarity editor. Every creator needs polished scripts and descriptions.',
     commission: '$0.20 free signup / $20 per upgrade', commissionNum: 3, cookie: '90 days',
-    affiliateUrl: 'https://www.grammarly.com/affiliates',
+    affiliateUrl: null,
     tags: ['scripting'], types: ['faceless','talking','tutorial','podcast'], minExp: 'new', hasTrial: true,
   },
 
@@ -48,7 +48,7 @@ export const TOOLS = [
     id: 'lalal', name: 'LALAL.AI', icon: '🎵', cat: 'Audio', price: 15, tier: 'paid',
     desc: 'AI audio stem separator — remove background music, isolate vocals, clean up messy interview audio.',
     commission: '30% per sale', commissionNum: 4.5, cookie: '180 days',
-    affiliateUrl: 'https://www.lalal.ai/affiliate-program/',
+    affiliateUrl: 'https://www.lalal.ai/?fp_ref=phillip53',
     tags: ['voiceover','editing'], types: ['podcast','talking'], minExp: 'growing', hasTrial: true,
   },
   {
