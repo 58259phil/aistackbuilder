@@ -122,27 +122,20 @@ export const TOOLS = [
     affiliateUrl: 'https://vidiq.com/affiliate/',
     tags: ['seo'], types: ['faceless','talking','tutorial','podcast'], minExp: 'new', hasTrial: true,
   },
-  {
-    id: 'tubebuddy', name: 'TubeBuddy', icon: '🔧', cat: 'SEO & growth', price: 9, tier: 'paid',
-    desc: 'Browser extension for tag management, A/B thumbnail testing, and bulk channel optimisation.',
-    commission: '15% recurring for 12 months', commissionNum: 1.35, cookie: '30 days',
-    affiliateUrl: 'https://www.tubebuddy.com/affiliateprogram',
-    tags: ['seo'], types: ['faceless','talking','tutorial','podcast'], minExp: 'growing', hasTrial: true,
-  },
 
   // THUMBNAILS
   {
     id: 'thumbnailtest', name: 'ThumbnailTest', icon: '🖼️', cat: 'Thumbnails', price: 15, tier: 'paid',
     desc: 'A/B test your YouTube thumbnails and titles with real data. See exactly which designs get more clicks before committing.',
     commission: '40–50% recurring', commissionNum: 6, cookie: '30 days',
-    affiliateUrl: 'https://thumbnailtest.com/affiliate-program/',
+    affiliateUrl: 'https://thumbnailtest.com/?via=phillip-bates',
     tags: ['thumbnails','seo'], types: ['faceless','talking','tutorial','podcast'], minExp: 'new', hasTrial: true,
   },
   {
     id: 'pikzels', name: 'Pikzels', icon: '🖼️', cat: 'Thumbnails', price: 19, tier: 'paid',
     desc: 'AI thumbnail generator trained on viral YouTube content. Scores your thumbnail\'s CTR potential.',
     commission: '33% recurring', commissionNum: 6.3, cookie: '30 days',
-    affiliateUrl: 'https://affiliates.pikzels.com/',
+    affiliateUrl: 'https://pikzels.com?via=phillip40',
     tags: ['thumbnails'], types: ['faceless','talking','tutorial'], minExp: 'growing', hasTrial: true,
   },
   {
