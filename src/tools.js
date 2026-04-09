@@ -11,7 +11,7 @@ export const TOOLS = [
     id: 'koala', name: 'Koala AI', icon: '🐨', cat: 'Scripting', price: 25, tier: 'paid',
     desc: 'AI writer that generates YouTube scripts, descriptions and hooks using live SERP data. Powered by GPT-4o with built-in SEO research.',
     commission: '30% lifetime recurring', commissionNum: 7.5, cookie: '60 days',
-    affiliateUrl: 'https://koala.sh/pages/affiliate',
+    affiliateUrl: 'https://koala.sh/?via=phillip-bates',
     tags: ['scripting'], types: ['talking','tutorial'], minExp: 'growing', hasTrial: true,
   },
   {
@@ -25,7 +25,7 @@ export const TOOLS = [
     id: 'grammarly', name: 'Grammarly', icon: '✅', cat: 'Scripting', price: 0, tier: 'freemium',
     desc: 'AI grammar and clarity editor. Every creator needs polished scripts and descriptions.',
     commission: '$0.20 free signup / $20 per upgrade', commissionNum: 3, cookie: '90 days',
-    affiliateUrl: 'https://www.grammarly.com/affiliates',
+    affiliateUrl: null,
     tags: ['scripting'], types: ['faceless','talking','tutorial','podcast'], minExp: 'new', hasTrial: true,
   },
 
@@ -34,7 +34,7 @@ export const TOOLS = [
     id: 'elevenLabs', name: 'ElevenLabs', icon: '🔊', cat: 'Voiceover', price: 22, tier: 'paid',
     desc: 'The #1 AI voice tool. Ultra-realistic voices and instant voice cloning. Essential for faceless channels.',
     commission: '22% recurring for 12 months', commissionNum: 4.84, cookie: '90 days',
-    affiliateUrl: 'https://elevenlabs.io/affiliates',
+    affiliateUrl: 'https://try.elevenlabs.io/l55nms662wgu',
     tags: ['voiceover'], types: ['faceless','tutorial'], minExp: 'new', hasTrial: true,
   },
   {
@@ -48,7 +48,7 @@ export const TOOLS = [
     id: 'lalal', name: 'LALAL.AI', icon: '🎵', cat: 'Audio', price: 15, tier: 'paid',
     desc: 'AI audio stem separator — remove background music, isolate vocals, clean up messy interview audio.',
     commission: '30% per sale', commissionNum: 4.5, cookie: '180 days',
-    affiliateUrl: 'https://www.lalal.ai/affiliate-program/',
+    affiliateUrl: 'https://www.lalal.ai/?fp_ref=phillip53',
     tags: ['voiceover','editing'], types: ['podcast','talking'], minExp: 'growing', hasTrial: true,
   },
   {
@@ -80,7 +80,7 @@ export const TOOLS = [
     id: 'pictory', name: 'Pictory', icon: '🎬', cat: 'Video creation', price: 19, tier: 'paid',
     desc: 'Turn scripts or blog posts into videos automatically. The go-to text-to-video tool for faceless creators.',
     commission: '20–50% recurring (tiered)', commissionNum: 7.5, cookie: '9999 days',
-    affiliateUrl: 'https://partners.pictory.ai/',
+    affiliateUrl: null,
     tags: ['editing','captions'], types: ['faceless'], minExp: 'new', hasTrial: true,
   },
   {
@@ -110,7 +110,7 @@ export const TOOLS = [
     id: 'heygen', name: 'HeyGen', icon: '🤖', cat: 'AI avatar', price: 29, tier: 'paid',
     desc: 'Realistic AI avatars with voice cloning in 175+ languages. No camera or studio needed — create professional videos in minutes.',
     commission: '35% for 3 months', commissionNum: 10.15, cookie: '30 days',
-    affiliateUrl: 'https://heygen.getrewardful.com/signup',
+    affiliateUrl: 'https://www.heygen.com/?sid=rewardful&utm_content=creator&utm_medium=affiliate&via=phillip-bates',
     tags: ['avatar','voiceover'], types: ['faceless','tutorial'], minExp: 'new', hasTrial: true,
   },
 
@@ -151,7 +151,7 @@ export const TOOLS = [
     id: 'submagic', name: 'Submagic', icon: '💬', cat: 'Captions', price: 20, tier: 'paid',
     desc: 'Auto-generate animated captions with AI. Huge for Shorts and Reels performance and accessibility.',
     commission: '30% recurring', commissionNum: 6, cookie: '45 days',
-    affiliateUrl: 'https://www.submagic.co/affiliate',
+    affiliateUrl: 'https://submagic.co/?via=phillip68',
     tags: ['captions','repurpose'], types: ['faceless','talking','tutorial'], minExp: 'new', hasTrial: true,
   },
   {
@@ -165,14 +165,14 @@ export const TOOLS = [
     id: 'opus', name: 'Opus Clip', icon: '✂️', cat: 'Repurposing', price: 19, tier: 'paid',
     desc: 'AI auto-clips your long videos into viral-ready shorts for TikTok, Reels, and YouTube Shorts.',
     commission: '25% recurring for 12 months', commissionNum: 4.75, cookie: '60 days',
-    affiliateUrl: 'https://www.opus.pro/affiliate',
+    affiliateUrl: 'https://www.opus.pro/?via=fc9679',
     tags: ['repurpose','editing','captions'], types: ['faceless','talking','podcast'], minExp: 'new', hasTrial: true,
   },
   {
     id: 'repurpose', name: 'Repurpose.io', icon: '♻️', cat: 'Repurposing', price: 25, tier: 'paid',
     desc: 'Automatically distributes your YouTube content to TikTok, Instagram, Facebook, and 10+ more platforms.',
     commission: '30% recurring', commissionNum: 7.5, cookie: '30 days',
-    affiliateUrl: 'https://repurpose.io/affiliate',
+    affiliateUrl: 'https://repurpose.io?fpr=641022',
     tags: ['repurpose'], types: ['faceless','talking','podcast'], minExp: 'growing', hasTrial: true,
   },
 ]
