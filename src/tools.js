@@ -87,7 +87,7 @@ export const TOOLS = [
     id: 'invideo', name: 'InVideo AI', icon: '🎥', cat: 'Video creation', price: 25, tier: 'paid',
     desc: 'Turn a text prompt into a full video with footage, voiceover, and captions — in minutes.',
     commission: '25% recurring', commissionNum: 6.25, cookie: '60 days',
-    affiliateUrl: 'https://app.impact.com/campaign-promo-signup/InVideo.brand',
+    affiliateUrl: 'https://vidiq.com/aistackbuilder',
     tags: ['editing','voiceover','captions'], types: ['faceless'], minExp: 'new', hasTrial: true,
   },
   {
