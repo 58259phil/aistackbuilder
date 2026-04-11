@@ -887,3 +887,6 @@ body {
 .blog-post-cta p { color: var(--text-muted); margin-bottom: 1rem; font-size: .95rem; }
 .back-btn { background: none; border: 1px solid var(--border); color: var(--text-muted); padding: .4rem .9rem; border-radius: 8px; font-size: .8rem; cursor: pointer; transition: border-color .2s, color .2s; }
 .back-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── Filter divider ── */
+.filter-divider { width: 1px; height: 20px; background: var(--border); margin: 0 4px; align-self: center; }

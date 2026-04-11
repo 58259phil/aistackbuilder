@@ -74,6 +74,7 @@ export default function App() {
   const [exp, setExp]             = useState(null)
   const [stack, setStack]         = useState(null)
   const [filterCat, setFilterCat] = useState('all')
+  const [filterTier, setFilterTier] = useState('all')
   const [sortBy, setSortBy]       = useState('match')
   const [emailVal, setEmailVal]   = useState('')
   const [emailSent, setEmailSent] = useState(false)
@@ -180,6 +181,7 @@ export default function App() {
 
   const displayedStack = stack ? [...stack]
     .filter(t => filterCat === 'all' || t.cat === filterCat)
+    .filter(t => filterTier === 'all' || t.tier === filterTier)
     .sort((a, b) => {
       if (sortBy === 'price-asc') return a.price - b.price
       if (sortBy === 'price-desc') return b.price - a.price
@@ -388,6 +390,11 @@ export default function App() {
                     {cat === 'all' ? 'All' : cat}
                   </button>
                 ))}
+                <div className="filter-divider" />
+                <button className={`filter-btn${filterTier === 'all' ? ' active' : ''}`} onClick={() => setFilterTier('all')}>All plans</button>
+                <button className={`filter-btn${filterTier === 'free' ? ' active' : ''}`} onClick={() => setFilterTier('free')}>Free</button>
+                <button className={`filter-btn${filterTier === 'freemium' ? ' active' : ''}`} onClick={() => setFilterTier('freemium')}>Freemium</button>
+                <button className={`filter-btn${filterTier === 'paid' ? ' active' : ''}`} onClick={() => setFilterTier('paid')}>Paid only</button>
                 <select className="sort-select" value={sortBy} onChange={e => setSortBy(e.target.value)}>
                   <option value="match">Sort: Best match</option>
                   <option value="price-asc">Sort: Price low–high</option>
