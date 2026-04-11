@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { TOOLS, EXP_ORDER, PAIN_LABELS, TYPE_LABELS } from './tools.js'
+import Blog, { BlogPost } from './Blog.jsx'
 import './index.css'
 
 /* ── Analytics helper — swap in your GA4 / Plausible calls here ── */
@@ -65,7 +66,7 @@ const WHY_MAP = {
 
 /* ── Main App ── */
 export default function App() {
-  const [page, setPage]           = useState('home') // 'home' | 'quiz' | 'results' | 'disclosure'
+  const [page, setPage]           = useState('home') // 'home' | 'quiz' | 'results' | 'disclosure' | 'blog' | 'blogpost'
   const [step, setStep]           = useState(1)
   const [channelType, setChannelType] = useState(null)
   const [budget, setBudget]       = useState(50)
@@ -79,6 +80,7 @@ export default function App() {
   const [emailLoading, setEmailLoading] = useState(false)
   const [copied, setCopied]       = useState(false)
   const [shareUrl, setShareUrl]   = useState('')
+  const [blogPostId, setBlogPostId] = useState(null)
 
   /* ── Load state from URL on mount ── */
   useEffect(() => {
@@ -144,7 +146,7 @@ export default function App() {
     track('email_submitted', { type: channelType })
 
     try {
-      const res = await fetch('/.netlify/functions/subscribe', {
+      const res = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -509,11 +511,29 @@ export default function App() {
           </div>
         )}
 
+        {/* ── Blog list ── */}
+        {page === 'blog' && (
+          <Blog
+            onBack={() => { setPage('home'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+            onPost={(id) => { setBlogPostId(id); setPage('blogpost'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+          />
+        )}
+
+        {/* ── Blog post ── */}
+        {page === 'blogpost' && (
+          <BlogPost
+            postId={blogPostId}
+            onBack={() => { setPage('home'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+            onBlog={() => { setPage('blog'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+          />
+        )}
+
         {/* ── Footer ── */}
         <footer className="footer">
           <span>© {new Date().getFullYear()} AI Stack Builder</span>
+          <a href="#blog" onClick={e => { e.preventDefault(); setPage('blog'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>Blog</a>
           <a href="#disclosure" onClick={e => { e.preventDefault(); setPage('disclosure'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>Affiliate Disclosure</a>
-          <a href="mailto:hello@youraistackbuilder.com">Contact</a>
+          <a href="mailto:hello@aistackbuilder.tech">Contact</a>
           <span className="footer-right" style={{ color: 'var(--text-muted)', fontSize: 11 }}>
             Tool rates verified {new Date().getFullYear()} · Always check before promoting
           </span>
