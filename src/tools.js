@@ -87,7 +87,7 @@ export const TOOLS = [
     id: 'invideo', name: 'InVideo AI', icon: '🎥', cat: 'Video creation', price: 25, tier: 'paid',
     desc: 'Turn a text prompt into a full video with footage, voiceover, and captions — in minutes.',
     commission: '25% recurring', commissionNum: 6.25, cookie: '60 days',
-    affiliateUrl: 'https://vidiq.com/aistackbuilder',
+    affiliateUrl: 'https://invideo.sjv.io/c/7163715/883681/12258',
     tags: ['editing','voiceover','captions'], types: ['faceless'], minExp: 'new', hasTrial: true,
   },
   {
@@ -119,7 +119,7 @@ export const TOOLS = [
     id: 'vidiq', name: 'VidIQ', icon: '📊', cat: 'SEO & growth', price: 10, tier: 'paid',
     desc: 'AI keyword research, title scoring, competitor tracking, and daily video ideas for your channel.',
     commission: 'Up to 25% recurring', commissionNum: 2.5, cookie: '30 days',
-    affiliateUrl: 'https://vidiq.com/affiliate/',
+    affiliateUrl: 'https://vidiq.com/aistackbuilder',
     tags: ['seo'], types: ['faceless','talking','tutorial','podcast'], minExp: 'new', hasTrial: true,
   },
 
