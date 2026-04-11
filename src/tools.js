@@ -3,6 +3,14 @@ export const TOOLS = [
   {
     id: 'chatgpt', name: 'ChatGPT', icon: '✍️', cat: 'Scripting', price: 20, tier: 'paid',
     desc: 'Write scripts, hooks, descriptions, and ideas in seconds. The most versatile tool in any creator stack.',
+    details: {
+      what: 'Large language model (LLM) by OpenAI running GPT-4o. Accepts text, images, and files as input and generates human-quality text output across any format.',
+      how: 'Interact via chat interface or API. Provide a prompt — video topic, target audience, tone — and ChatGPT generates a full script draft. Iterate by asking it to revise, shorten, rewrite in a different style, or generate alternative hooks.',
+      features: ['GPT-4o model with 128k context window', 'Web browsing for up-to-date research', 'Image and document input', 'Custom instructions for consistent brand voice', 'API access for automation workflows'],
+      trial: 'Free plan with GPT-4o mini. GPT-4o requires Plus plan at $20/month.',
+      platform: 'Web, iOS, Android, API',
+      bestFor: 'Any creator who needs fast first drafts of scripts, hooks, titles, descriptions, or video ideas.',
+    },
     commission: '20% recurring', commissionNum: 4, cookie: '30 days',
     affiliateUrl: null,
     tags: ['scripting'], types: ['faceless','talking','tutorial','podcast'], minExp: 'new', hasTrial: true,
@@ -10,6 +18,14 @@ export const TOOLS = [
   {
     id: 'koala', name: 'Koala AI', icon: '🐨', cat: 'Scripting', price: 25, tier: 'paid',
     desc: 'AI writer that generates YouTube scripts, descriptions and hooks using live SERP data. Powered by GPT-4o with built-in SEO research.',
+    details: {
+      what: 'Cloud-based AI content suite powered by GPT-4o. Integrates live SERP data, real-time web research, and Amazon product data into its generation pipeline — unlike generic AI writers that rely solely on training data.',
+      how: 'Enter your target keyword or topic. KoalaWriter analyses top-ranking pages, extracts semantic keywords, and generates a structured script or article with H2/H3 headings and SEO-optimised subheadings. Customise the outline before generation.',
+      features: ['Real-time SERP analysis via live web data', 'GPT-4o powered with semantic keyword integration', 'Amazon product review mode for affiliate content', 'Bulk article generation mode', 'WordPress, Shopify, Webflow direct publish', 'Internal linking automation via KoalaLinks'],
+      trial: 'Free plan includes 5,000 words. Paid plans from $9/month.',
+      platform: 'Web-based (browser)',
+      bestFor: 'Tutorial and educational creators who want SEO-optimised scripts and descriptions that rank in search.',
+    },
     commission: '30% lifetime recurring', commissionNum: 7.5, cookie: '60 days',
     affiliateUrl: 'https://koala.sh/?via=phillip-bates',
     tags: ['scripting'], types: ['talking','tutorial'], minExp: 'growing', hasTrial: true,
@@ -17,6 +33,14 @@ export const TOOLS = [
   {
     id: 'writesonic', name: 'Writesonic', icon: '📝', cat: 'Scripting', price: 16, tier: 'paid',
     desc: 'AI script and content writer with SEO built in. Covers YouTube scripts, descriptions, hooks, and repurposed blog posts.',
+    details: {
+      what: 'AI writing platform built on GPT-4o and Claude models, with a built-in SEO optimiser, brand voice trainer, and Chatsonic AI chatbot. Designed for content teams and solo creators who need consistent, on-brand output at scale.',
+      how: 'Select a template (YouTube script, video description, blog post, ad copy), enter your topic and keywords, set tone and brand voice, and generate. Factual Article writer connects to Google Search for real-time data.',
+      features: ['GPT-4o and Claude model access', 'Real-time Google Search integration', 'Brand voice training from your existing content', '100+ content templates', 'Bulk content generation', 'SEO checker with keyword density analysis'],
+      trial: 'Free trial available. Paid plans from $16/month.',
+      platform: 'Web-based (browser), Chrome extension',
+      bestFor: 'Creators who publish regularly and need a consistent brand voice across scripts, descriptions, and blog repurposing.',
+    },
     commission: '30% lifetime recurring', commissionNum: 4.8, cookie: '30 days',
     affiliateUrl: 'https://affiliates.writesonic.com/',
     tags: ['scripting'], types: ['faceless','talking','tutorial','podcast'], minExp: 'new', hasTrial: true,
@@ -24,6 +48,14 @@ export const TOOLS = [
   {
     id: 'grammarly', name: 'Grammarly', icon: '✅', cat: 'Scripting', price: 0, tier: 'freemium',
     desc: 'AI grammar and clarity editor. Every creator needs polished scripts and descriptions.',
+    details: {
+      what: 'AI writing assistant that analyses text for grammar, spelling, punctuation, clarity, conciseness, tone, and engagement. Uses a transformer-based NLP model trained on a large corpus of professional writing.',
+      how: 'Integrates directly into your browser, Google Docs, and Microsoft Word via extension. As you type, Grammarly highlights issues with colour-coded underlines and suggests corrections. Tone detector shows how your writing reads emotionally.',
+      features: ['Real-time grammar, spelling, and punctuation correction', 'Clarity and conciseness suggestions', 'Tone detection and adjustment', 'Plagiarism checker (Premium)', 'Browser extension works in any text field', 'MS Word and Google Docs integration'],
+      trial: 'Fully functional free plan. Premium from $12/month.',
+      platform: 'Web, Chrome/Firefox/Safari extension, Windows/Mac desktop app, iOS/Android',
+      bestFor: 'Any creator writing scripts, video descriptions, email newsletters, or social captions who wants to eliminate errors and improve clarity.',
+    },
     commission: '$0.20 free signup / $20 per upgrade', commissionNum: 3, cookie: '90 days',
     affiliateUrl: null,
     tags: ['scripting'], types: ['faceless','talking','tutorial','podcast'], minExp: 'new', hasTrial: true,
@@ -33,6 +65,14 @@ export const TOOLS = [
   {
     id: 'elevenLabs', name: 'ElevenLabs', icon: '🔊', cat: 'Voiceover', price: 22, tier: 'paid',
     desc: 'The #1 AI voice tool. Ultra-realistic voices and instant voice cloning. Essential for faceless channels.',
+    details: {
+      what: 'Neural text-to-speech platform using proprietary deep learning trained on a large multilingual audio corpus. Rated as the most human-sounding TTS available — produces voices with natural prosody, emotional inflection, and accent accuracy.',
+      how: 'Paste your script into the web editor, select from 10,000+ voices (or upload a 1-minute sample to clone your own), adjust stability and clarity sliders, then generate. Exports as MP3, PCM, or μ-law. API enables integration into automated workflows.',
+      features: ['10,000+ voices across 32 languages', 'Instant Voice Cloning from 1-minute audio sample', 'Professional Voice Cloning via fine-tuned model (Creator+ plans)', 'SSML support for precise pronunciation control', '75ms latency Flash model for real-time applications', 'REST API with Python and TypeScript SDKs', 'Speech-to-speech voice conversion'],
+      trial: 'Free plan: 10,000 characters/month. Starter $5/month, Creator $22/month.',
+      platform: 'Web-based, REST API',
+      bestFor: 'Faceless YouTube creators who need consistent, high-quality narration across multiple videos without recording themselves.',
+    },
     commission: '22% recurring for 12 months', commissionNum: 4.84, cookie: '90 days',
     affiliateUrl: 'https://try.elevenlabs.io/l55nms662wgu',
     tags: ['voiceover'], types: ['faceless','tutorial'], minExp: 'new', hasTrial: true,
@@ -40,6 +80,14 @@ export const TOOLS = [
   {
     id: 'murf', name: 'Murf AI', icon: '🎤', cat: 'Voiceover', price: 29, tier: 'paid',
     desc: '130+ AI voices in 20+ languages. Studio-quality voiceovers for YouTube, podcasts, and e-learning.',
+    details: {
+      what: 'Cloud-based AI voiceover studio with a built-in video synchronisation editor. Unlike bare TTS tools, Murf includes a full timeline editor for syncing voiceover to video, adjusting timing, and adding background music — all in the browser.',
+      how: 'Type or paste your script, choose from 130+ voices across 20+ languages, then use the built-in editor to sync audio to your video or presentation. Adjust pitch, speed, and emphasis per sentence. Export as MP3, WAV, or direct video with embedded voiceover.',
+      features: ['130+ voices across 20+ languages', 'Built-in video/audio sync editor with timeline', 'Pitch and speed control per sentence', 'Emphasis markers for word-level stress control', 'Background music library included', 'Team collaboration with shared projects', 'API access on higher plans'],
+      trial: 'Free plan: 10 minutes voice generation. Pro from $29/month.',
+      platform: 'Web-based (browser)',
+      bestFor: 'Tutorial and e-learning creators who need to sync voiceover to screen recordings or slideshows without a separate video editor.',
+    },
     commission: '20% recurring for 24 months', commissionNum: 5.8, cookie: '90 days',
     affiliateUrl: 'https://murf.ai/partner-with-us/affiliate',
     tags: ['voiceover'], types: ['faceless','tutorial','podcast'], minExp: 'new', hasTrial: true,
@@ -47,6 +95,14 @@ export const TOOLS = [
   {
     id: 'lalal', name: 'LALAL.AI', icon: '🎵', cat: 'Audio', price: 15, tier: 'paid',
     desc: 'AI audio stem separator — remove background music, isolate vocals, clean up messy interview audio.',
+    details: {
+      what: 'AI-powered audio source separation tool using Phoenix neural network architecture. Separates mixed audio into individual stems with minimal artefacting — significantly more accurate than traditional frequency-based separation.',
+      how: 'Upload an audio or video file (MP3, WAV, MP4, etc.), select what you want to remove or isolate (vocals, background noise, specific instruments), and download the cleaned stems. Processing happens in the cloud — no installation required.',
+      features: ['Phoenix neural network for high-accuracy stem separation', 'Isolate or remove: vocals, drums, bass, piano, guitar, background noise', 'Supports MP3, WAV, FLAC, AIFF, video files', 'Batch processing for multiple files', 'No quality degradation on clean sources', 'API available for workflow integration'],
+      trial: 'Free tier with limited minutes. Pay-per-minute packs from $15, or subscription plans.',
+      platform: 'Web-based (browser), API',
+      bestFor: 'Podcast creators with background noise issues, or anyone needing to remove music from interview recordings.',
+    },
     commission: '30% per sale', commissionNum: 4.5, cookie: '180 days',
     affiliateUrl: 'https://www.lalal.ai/?fp_ref=phillip53',
     tags: ['voiceover','editing'], types: ['podcast','talking'], minExp: 'growing', hasTrial: true,
@@ -54,6 +110,14 @@ export const TOOLS = [
   {
     id: 'adobePodcast', name: 'Adobe Podcast', icon: '🎙️', cat: 'Audio', price: 0, tier: 'free',
     desc: 'Free AI audio enhancer that removes noise and improves voice clarity. Instant upgrade for any creator.',
+    details: {
+      what: 'Free AI-powered audio enhancement tool from Adobe. Uses machine learning to remove background noise, room reverb, and recording artefacts from voice recordings — optimised specifically for speech, not music.',
+      how: 'Upload your audio file to the web tool. Adobe AI analyses and separates speech from background noise, applying enhancement filters. The enhanced file downloads in minutes. No Adobe subscription required for Enhance Speech.',
+      features: ['AI speech enhancement removes background noise and reverb', 'Optimised for spoken-word audio (not music)', 'Supports MP3, WAV, M4A, OGG files up to 1GB', 'Completely free via Adobe Podcast web tool', 'Processes in cloud — no software installation'],
+      trial: 'Completely free. Adobe account required.',
+      platform: 'Web-based (browser)',
+      bestFor: 'Any creator recording voice on a basic setup — headset mic, laptop mic, or phone — who wants a quick, free audio quality upgrade.',
+    },
     commission: null, commissionNum: 0, cookie: null,
     affiliateUrl: null,
     tags: ['voiceover'], types: ['talking','podcast','tutorial'], minExp: 'new', hasTrial: true,
@@ -63,6 +127,14 @@ export const TOOLS = [
   {
     id: 'descript', name: 'Descript', icon: '✂️', cat: 'Editing', price: 24, tier: 'paid',
     desc: 'Edit video by editing a transcript. Remove filler words, silences, and mistakes in one click.',
+    details: {
+      what: 'AI-powered video and podcast editor that transcribes your footage and lets you edit the video by editing the text transcript. Cutting a word from the transcript cuts it from the video — eliminating timeline scrubbing entirely.',
+      how: 'Import your video or audio. Descript transcribes it automatically (98%+ accuracy). Edit the text document — delete sentences, rearrange paragraphs, remove filler words — and the video edits itself. Overdub lets you correct mistakes by typing new words spoken in your cloned voice.',
+      features: ['Text-based video editing via AI transcript', 'One-click filler word removal (um, uh, like)', 'Silence removal with adjustable threshold', 'Overdub: type corrections in your cloned voice', 'Screen recording built-in', 'Automatic captions and subtitle export', 'Multi-track video and audio timeline'],
+      trial: 'Free plan: 1 hour transcription/month. Hobbyist $24/month.',
+      platform: 'Windows, Mac desktop app; web editor also available',
+      bestFor: 'Talking head and podcast creators who spend hours editing out mistakes and silences — reduces editing time by 60-80%.',
+    },
     commission: '15% recurring for 12 months', commissionNum: 3.6, cookie: '30 days',
     affiliateUrl: 'https://www.descript.com/affiliate',
     tags: ['editing','voiceover','captions'], types: ['talking','podcast','tutorial'], minExp: 'new', hasTrial: true,
@@ -70,6 +142,14 @@ export const TOOLS = [
   {
     id: 'veed', name: 'VEED.IO', icon: '🖥️', cat: 'Editing', price: 18, tier: 'paid',
     desc: 'Browser-based editor with one-click AI captions, subtitles, and automatic eye contact correction.',
+    details: {
+      what: 'Browser-based video editor with an extensive AI feature set — no software download required. Known for one-click auto-subtitle generation, eye contact correction (repositions your gaze to look directly at camera), and background removal.',
+      how: 'Upload your video to the web editor. Auto-subtitle tool generates captions in 100+ languages — review in a text editor overlay. Apply eye contact correction, background removal, or noise suppression with single clicks. Export directly to YouTube or download.',
+      features: ['Auto-subtitles in 100+ languages with 95%+ accuracy', 'Eye contact correction via AI gaze repositioning', 'Background removal without green screen', 'AI noise suppression', 'Teleprompter built-in for recording', 'Brand kit for consistent fonts, colours, logos', 'Screen recording and webcam capture'],
+      trial: 'Free plan with watermark. Basic plan from $18/month.',
+      platform: 'Web-based (browser) — no download required',
+      bestFor: 'Tutorial and talking head creators who want a fast, browser-based editor with strong caption and subtitle capabilities.',
+    },
     commission: '20% recurring', commissionNum: 3.6, cookie: '30 days',
     affiliateUrl: 'https://www.veed.io/affiliate',
     tags: ['editing','captions'], types: ['talking','tutorial'], minExp: 'new', hasTrial: true,
@@ -79,6 +159,14 @@ export const TOOLS = [
   {
     id: 'pictory', name: 'Pictory', icon: '🎬', cat: 'Video creation', price: 19, tier: 'paid',
     desc: 'Turn scripts or blog posts into videos automatically. The go-to text-to-video tool for faceless creators.',
+    details: {
+      what: 'Text-to-video platform that converts scripts, blog posts, or URLs into fully-produced videos by automatically matching your text to relevant stock footage from a library of 3M+ clips. No timeline editing required.',
+      how: 'Paste your script or article URL. Pictory breaks it into scenes, matches each sentence to relevant stock footage, adds AI voiceover, and applies captions. Review and swap individual clips before exporting. Full 5-minute video in 5-10 minutes.',
+      features: ['3M+ licensed stock video clips from Storyblocks', 'AI scene-to-footage matching', 'Auto-captions with 99% accuracy', 'AI voiceover from 40+ voices', 'Blog-to-video URL import', 'Highlight reel generator from long videos', 'Brand kit with logo watermark and colour scheme'],
+      trial: 'Free trial. Starter plan from $19/month.',
+      platform: 'Web-based (browser)',
+      bestFor: 'Faceless creators who want to turn written content — blog posts, scripts, articles — into videos without manual footage sourcing or editing.',
+    },
     commission: '20–50% recurring (tiered)', commissionNum: 7.5, cookie: '9999 days',
     affiliateUrl: null,
     tags: ['editing','captions'], types: ['faceless'], minExp: 'new', hasTrial: true,
@@ -86,13 +174,29 @@ export const TOOLS = [
   {
     id: 'invideo', name: 'InVideo AI', icon: '🎥', cat: 'Video creation', price: 25, tier: 'paid',
     desc: 'Turn a text prompt into a full video with footage, voiceover, and captions — in minutes.',
+    details: {
+      what: 'AI video generation platform that turns a text prompt or script into a fully produced video with stock footage, AI voiceover, music, and captions. Access to iStock library with 16M+ licensed clips.',
+      how: 'Type a prompt describing your video. InVideo AI generates a full script, selects matching footage, adds AI voiceover and background music, and delivers a ready-to-publish video. Edit via chat interface — type instructions to swap clips, change voiceover, adjust pacing.',
+      features: ['Text-prompt-to-video generation', '16M+ iStock licensed footage clips', 'AI voiceover in 50+ languages', 'Chat-based editing interface', 'YouTube Shorts and Reels format export', 'Brand kit and watermark', '120-day cookie window for affiliates'],
+      trial: 'Free plan with watermarked exports. Plus plan from $25/month.',
+      platform: 'Web-based (browser)',
+      bestFor: 'Faceless creators who want to produce videos quickly from a prompt without manual footage selection or voiceover recording.',
+    },
     commission: '25% recurring', commissionNum: 6.25, cookie: '60 days',
-    affiliateUrl: 'https://invideo.sjv.io/c/7163715/883681/12258',
+    affiliateUrl: 'https://app.impact.com/campaign-promo-signup/InVideo.brand',
     tags: ['editing','voiceover','captions'], types: ['faceless'], minExp: 'new', hasTrial: true,
   },
   {
     id: 'runway', name: 'Runway ML', icon: '🎞️', cat: 'Video creation', price: 15, tier: 'paid',
     desc: 'AI video generation and effects. Next-level cinematic visuals for established creators.',
+    details: {
+      what: 'Professional AI creative suite built around Gen-3 Alpha, Runway\'s video generation model. Produces cinematic AI-generated video from text or image prompts. Used by Hollywood studios and professional filmmakers.',
+      how: 'Use text-to-video or image-to-video to generate short cinematic clips (up to 10 seconds). Combine with AI motion brush (animate specific parts of an image), frame interpolation, and background removal to build complex sequences.',
+      features: ['Gen-3 Alpha text-to-video and image-to-video', 'AI motion brush for selective animation', 'Frame interpolation for smooth slow motion', 'Background removal without green screen', 'AI training on custom style (Pro plan)', 'Inpainting and outpainting', 'Direct integration with Adobe Premiere'],
+      trial: 'Free plan with 125 credits. Standard from $15/month.',
+      platform: 'Web-based (browser)',
+      bestFor: 'Established faceless creators who want cinematic AI-generated B-roll, intro sequences, or visual effects to elevate production quality.',
+    },
     commission: null, commissionNum: 0, cookie: null,
     affiliateUrl: null,
     tags: ['editing'], types: ['faceless'], minExp: 'established', hasTrial: false,
@@ -102,6 +206,14 @@ export const TOOLS = [
   {
     id: 'aiStudios', name: 'AI Studios', icon: '🎭', cat: 'AI avatar', price: 30, tier: 'paid',
     desc: 'DeepBrain AI — generate avatar videos from a script in minutes. Highest affiliate payout in this list.',
+    details: {
+      what: 'Enterprise-grade AI avatar video generation platform by DeepBrain AI. Uses photorealistic human avatars synthesised from real actor footage, combined with neural TTS to produce presenter-style videos from a script alone.',
+      how: 'Select an avatar (80+ options across nationalities, ages, and styles), paste your script, choose a voice, and generate. The platform produces a video of the avatar speaking your script with accurate lip sync. Add slides, lower thirds, or B-roll as overlays.',
+      features: ['80+ photorealistic AI avatars', 'Neural TTS in 80+ languages and 100+ voices', 'Accurate lip sync via deep learning', 'ChatGPT script generation built-in', 'PowerPoint/Google Slides import for presenter videos', 'Custom avatar creation from your photo (Enterprise)', 'API access for programmatic generation'],
+      trial: 'Free trial available. Personal plan from $30/month.',
+      platform: 'Web-based (browser)',
+      bestFor: 'Faceless creators and tutorial makers who want a professional on-screen presenter without appearing on camera.',
+    },
     commission: '50% on first payment', commissionNum: 15, cookie: '60 days',
     affiliateUrl: 'https://www.aistudios.com/affiliate',
     tags: ['avatar','voiceover'], types: ['faceless','tutorial'], minExp: 'new', hasTrial: true,
@@ -109,6 +221,14 @@ export const TOOLS = [
   {
     id: 'heygen', name: 'HeyGen', icon: '🤖', cat: 'AI avatar', price: 29, tier: 'paid',
     desc: 'Realistic AI avatars with voice cloning in 175+ languages. No camera or studio needed — create professional videos in minutes.',
+    details: {
+      what: 'AI video generation platform specialising in photorealistic avatar videos and video translation. Used by 30M+ users and 85% of Fortune 100 companies. Raised $60M in funding at a $215M valuation. Market leader for AI avatar video quality.',
+      how: 'Choose from 100+ avatars or create an Instant Avatar from a 2-minute video of yourself. Write your script, select a voice (or clone your own), and HeyGen generates the avatar video with accurate lip sync. Video Translation re-dubs existing videos into other languages with matching lip sync.',
+      features: ['100+ photorealistic avatars (diverse ages, ethnicities, styles)', 'Instant Avatar from 2-minute video sample', 'Voice cloning from audio sample', 'Video Translation with lip sync in 175+ languages', 'Talking Photo (animate any still image)', 'Streaming Avatar API for real-time applications', 'Zapier integration for workflow automation'],
+      trial: 'Free plan: 3 videos/month with watermark. Creator plan $29/month.',
+      platform: 'Web-based (browser), API',
+      bestFor: 'Faceless creators wanting a realistic on-screen presenter, and creators looking to expand into international audiences via video translation.',
+    },
     commission: '35% for 3 months', commissionNum: 10.15, cookie: '30 days',
     affiliateUrl: 'https://www.heygen.com/?sid=rewardful&utm_content=creator&utm_medium=affiliate&via=phillip-bates',
     tags: ['avatar','voiceover'], types: ['faceless','tutorial'], minExp: 'new', hasTrial: true,
@@ -118,8 +238,16 @@ export const TOOLS = [
   {
     id: 'vidiq', name: 'VidIQ', icon: '📊', cat: 'SEO & growth', price: 10, tier: 'paid',
     desc: 'AI keyword research, title scoring, competitor tracking, and daily video ideas for your channel.',
+    details: {
+      what: 'YouTube channel growth platform combining keyword research, SEO analytics, competitor tracking, and AI-powered video idea generation. Browser extension overlays live data on YouTube search results and video pages.',
+      how: 'Install the browser extension. VidIQ adds a data sidebar to every YouTube page showing keyword search volume, competition scores, trending tags, and channel analytics. The AI coach generates daily personalised video ideas based on your niche and recent performance.',
+      features: ['Keyword research with search volume and competition scores', 'AI daily video ideas personalised to your channel', 'Competitor channel tracking and comparison', 'Title and thumbnail analyser with CTR prediction', 'Trending videos and topics dashboard', 'Bulk video SEO auditor', 'Chrome extension with live YouTube data overlay'],
+      trial: 'Robust free plan. Basic plan from $7.50/month.',
+      platform: 'Web dashboard, Chrome extension',
+      bestFor: 'Any creator struggling with what to make videos about or how to get their videos found in YouTube search.',
+    },
     commission: 'Up to 25% recurring', commissionNum: 2.5, cookie: '30 days',
-    affiliateUrl: 'https://vidiq.com/aistackbuilder',
+    affiliateUrl: 'https://vidiq.com/affiliate/',
     tags: ['seo'], types: ['faceless','talking','tutorial','podcast'], minExp: 'new', hasTrial: true,
   },
 
@@ -127,6 +255,14 @@ export const TOOLS = [
   {
     id: 'thumbnailtest', name: 'ThumbnailTest', icon: '🖼️', cat: 'Thumbnails', price: 15, tier: 'paid',
     desc: 'A/B test your YouTube thumbnails and titles with real data. See exactly which designs get more clicks before committing.',
+    details: {
+      what: 'Thumbnail and title A/B testing platform that presents your designs to a panel of real YouTube users (not bots) and measures click-through rate before you publish. Based on the same principle as YouTube\'s built-in A/B test but available pre-publish with faster results.',
+      how: 'Upload two thumbnail designs and optionally two title variants. ThumbnailTest distributes them to a representative panel of YouTube users who see your thumbnail in a simulated YouTube feed. Results arrive within 2-4 hours, showing CTR, preference percentage, and heatmap data.',
+      features: ['Pre-publish A/B testing with real user panels', 'Simulated YouTube feed context for accurate results', 'Title testing alongside thumbnail testing', 'Click heatmaps showing where viewers focus', 'Demographic breakdown of test respondents', 'Historical test archive for pattern analysis'],
+      trial: 'Free trial available. Basic plan from $15/month.',
+      platform: 'Web-based (browser)',
+      bestFor: 'Any creator who publishes regularly and wants data-driven confirmation of their thumbnail before going live.',
+    },
     commission: '40–50% recurring', commissionNum: 6, cookie: '30 days',
     affiliateUrl: 'https://thumbnailtest.com/?via=phillip-bates',
     tags: ['thumbnails','seo'], types: ['faceless','talking','tutorial','podcast'], minExp: 'new', hasTrial: true,
@@ -134,6 +270,14 @@ export const TOOLS = [
   {
     id: 'pikzels', name: 'Pikzels', icon: '🖼️', cat: 'Thumbnails', price: 19, tier: 'paid',
     desc: 'AI thumbnail generator trained on viral YouTube content. Scores your thumbnail\'s CTR potential.',
+    details: {
+      what: 'AI thumbnail generation and scoring platform trained specifically on high-performing YouTube thumbnails. Uses computer vision and CTR prediction models to both generate thumbnail concepts and evaluate existing designs.',
+      how: 'Enter your video title and description. Pikzels generates multiple thumbnail concept layouts using AI, drawing on patterns from high-CTR YouTube content. Upload your own thumbnail to receive a predicted CTR score with specific improvement suggestions.',
+      features: ['AI thumbnail concept generation from title/description', 'CTR prediction score for existing thumbnails', 'Trained on viral YouTube thumbnail dataset', 'Improvement suggestions (contrast, composition, text)', 'Template library based on high-performing thumbnails', 'Batch generation for A/B test variants'],
+      trial: 'Free trial available. Plans from $19/month.',
+      platform: 'Web-based (browser)',
+      bestFor: 'Creators who struggle with thumbnail design and want AI-generated concepts, or established creators who want to validate CTR potential before publishing.',
+    },
     commission: '33% recurring', commissionNum: 6.3, cookie: '30 days',
     affiliateUrl: 'https://pikzels.com?via=phillip40',
     tags: ['thumbnails'], types: ['faceless','talking','tutorial'], minExp: 'growing', hasTrial: true,
@@ -141,6 +285,14 @@ export const TOOLS = [
   {
     id: 'adcreative', name: 'AdCreative.ai', icon: '📣', cat: 'Thumbnails', price: 29, tier: 'paid',
     desc: 'AI-generated ad creatives and social visuals optimised for conversions. Great for paid channel promotion.',
+    details: {
+      what: 'AI creative generation platform that produces conversion-optimised ad banners, social media visuals, and video ad scripts using machine learning trained on high-performing advertising creative across Meta, Google, and TikTok.',
+      how: 'Connect your brand assets (logo, colours, product images). Input your target audience, platform, and campaign goal. AdCreative.ai generates multiple creative variants ranked by predicted conversion score, including copy, visual layout, and colour treatment.',
+      features: ['AI creative generation trained on conversion data', 'Conversion score prediction for each variant', 'Platform-specific sizing (Meta, Google, TikTok, LinkedIn)', 'A/B test pack generation', 'Brand kit integration', 'Video ad script generation', 'Competitor ad analysis'],
+      trial: 'Free trial. Starter plan from $29/month.',
+      platform: 'Web-based (browser)',
+      bestFor: 'Established creators running paid promotion for their YouTube channel who need conversion-optimised ad creatives at scale.',
+    },
     commission: '30–40% recurring', commissionNum: 10, cookie: '90 days',
     affiliateUrl: 'https://www.adcreative.ai/affiliate',
     tags: ['thumbnails'], types: ['talking','tutorial'], minExp: 'established', hasTrial: false,
@@ -150,6 +302,14 @@ export const TOOLS = [
   {
     id: 'submagic', name: 'Submagic', icon: '💬', cat: 'Captions', price: 20, tier: 'paid',
     desc: 'Auto-generate animated captions with AI. Huge for Shorts and Reels performance and accessibility.',
+    details: {
+      what: 'AI-powered short-form video editor specialising in animated caption generation and viral clip extraction. Built specifically for Shorts, Reels, and TikTok. Uses NLP with 98.8% caption accuracy and computer vision for automatic zoom, B-roll insertion, and transition detection.',
+      how: 'Upload your video or paste a YouTube URL. Submagic transcribes it, applies animated word-by-word highlight captions (with emoji overlays, dynamic zoom, and transitions), and generates a short-form ready video in under 3 minutes. Magic Clips V2 extracts the most viral-worthy moments from longer footage.',
+      features: ['98.8% accurate AI caption generation in 48+ languages', 'Word-by-word animated highlight captions', 'Magic Clips V2 — viral moment extraction', 'AI auto-zoom and transition detection', 'B-roll suggestions from stock footage', 'Filler word and silence removal', 'Hook template library based on viral content patterns'],
+      trial: 'Free plan: 3 videos. Pro plan from $20/month.',
+      platform: 'Web-based (browser)',
+      bestFor: 'Creators posting YouTube Shorts, TikTok, or Instagram Reels who want professional animated captions without manual editing.',
+    },
     commission: '30% recurring', commissionNum: 6, cookie: '45 days',
     affiliateUrl: 'https://submagic.co/?via=phillip68',
     tags: ['captions','repurpose'], types: ['faceless','talking','tutorial'], minExp: 'new', hasTrial: true,
@@ -157,6 +317,14 @@ export const TOOLS = [
   {
     id: 'notta', name: 'Notta.ai', icon: '📋', cat: 'Captions', price: 14, tier: 'paid',
     desc: 'AI transcription for interviews, podcasts, and meetings. Converts any audio or video to accurate searchable text in 58 languages.',
+    details: {
+      what: 'AI transcription and meeting intelligence platform powered by a proprietary ASR (Automatic Speech Recognition) model. Transcribes audio and video files with speaker identification, timestamps, and searchable archive across 58 languages.',
+      how: 'Upload an audio or video file, or connect Notta as a bot to Zoom/Google Meet/Teams meetings. Transcribes in real-time or from file, identifies different speakers, adds timestamps, and generates a shareable transcript. Export as TXT, DOCX, SRT subtitle file, or PDF.',
+      features: ['58-language transcription with speaker diarisation', 'Real-time meeting transcription (Zoom, Teams, Google Meet)', 'SRT subtitle file export for direct video upload', 'AI summarisation and key point extraction', 'Searchable transcript archive', 'Chrome extension for browser audio capture', 'API access for workflow integration'],
+      trial: 'Free plan: 120 minutes/month. Pro from $14/month.',
+      platform: 'Web, iOS, Android, Chrome extension',
+      bestFor: 'Podcast and interview creators who need accurate transcripts for captions, blog repurposing, or show notes.',
+    },
     commission: '30% per sale', commissionNum: 4.2, cookie: '30 days',
     affiliateUrl: 'https://www.notta.ai/en/affiliate',
     tags: ['captions','repurpose'], types: ['podcast','talking'], minExp: 'new', hasTrial: true,
@@ -164,6 +332,14 @@ export const TOOLS = [
   {
     id: 'opus', name: 'Opus Clip', icon: '✂️', cat: 'Repurposing', price: 19, tier: 'paid',
     desc: 'AI auto-clips your long videos into viral-ready shorts for TikTok, Reels, and YouTube Shorts.',
+    details: {
+      what: 'AI video repurposing platform and current market leader for long-to-short content transformation. Raised $50M from SoftBank Vision Fund 2 at a $215M valuation in 2025. Uses ClipAnything™ and ReframeAnything™ proprietary AI models.',
+      how: 'Paste a YouTube, Zoom, Loom, or Twitch URL (or upload directly). Opus Clip processes the video, assigns an AI Virality Score™ to each potential clip, then generates the top clips with captions, vertical reframing, and speaker repositioning. A 45-minute video typically yields 10-20 clips.',
+      features: ['ClipAnything™ AI for engagement-based clip detection', 'AI Virality Score™ (0-100) for predicted social performance', 'ReframeAnything™ — automatic 9:16 reformatting with speaker tracking', 'Auto-captions with animated word highlights', 'AI hook generation to strengthen clip openings', 'Direct scheduling to TikTok, YouTube, Instagram', 'Multi-speaker support for podcast/interview content'],
+      trial: 'Free Forever: 60 processing minutes/month. Starter $15/month, Pro $29/month.',
+      platform: 'Web-based (browser)',
+      bestFor: 'Any creator who produces long-form content and wants to extract Shorts/Reels without manually reviewing and clipping footage.',
+    },
     commission: '25% recurring for 12 months', commissionNum: 4.75, cookie: '60 days',
     affiliateUrl: 'https://www.opus.pro/?via=fc9679',
     tags: ['repurpose','editing','captions'], types: ['faceless','talking','podcast'], minExp: 'new', hasTrial: true,
@@ -171,6 +347,14 @@ export const TOOLS = [
   {
     id: 'repurpose', name: 'Repurpose.io', icon: '♻️', cat: 'Repurposing', price: 25, tier: 'paid',
     desc: 'Automatically distributes your YouTube content to TikTok, Instagram, Facebook, and 10+ more platforms.',
+    details: {
+      what: 'Content distribution automation platform that connects your primary publishing channel (YouTube, podcast, Facebook Live) to 10+ destination platforms via rule-based workflows. Set up once — every future video publishes everywhere automatically.',
+      how: 'Connect your YouTube channel and destination platforms (TikTok, Instagram, Facebook, LinkedIn, Pinterest, etc.). Build a workflow: when you publish on YouTube, Repurpose.io automatically posts to each platform with your specified hashtags and caption templates. Handles format conversion and scheduling.',
+      features: ['Automated workflows connecting YouTube to 10+ platforms', 'Caption and hashtag templates per destination platform', 'Aspect ratio conversion (16:9 to 9:16 for Shorts/Reels)', 'Scheduling within each platform\'s optimal posting windows', 'Podcast-to-video conversion (audio waveform video)', 'Facebook/Instagram Live auto-clip and republish', 'Zapier integration for custom triggers'],
+      trial: 'Free trial. Plans from $25/month.',
+      platform: 'Web-based (browser)',
+      bestFor: 'Creators publishing long-form YouTube content who want automatic multi-platform distribution without logging into each platform separately.',
+    },
     commission: '30% recurring', commissionNum: 7.5, cookie: '30 days',
     affiliateUrl: 'https://repurpose.io?fpr=641022',
     tags: ['repurpose'], types: ['faceless','talking','podcast'], minExp: 'growing', hasTrial: true,
