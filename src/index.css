@@ -890,3 +890,19 @@ body {
 
 /* ── Filter divider ── */
 .filter-divider { width: 1px; height: 20px; background: var(--border); margin: 0 4px; align-self: center; }
+
+/* ── Tool of the Month ── */
+.totm-section { margin: 2rem 0; }
+.totm-badge { display: inline-block; background: #0f1929; border: 1px solid #1e4070; color: #60a5fa; font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: .35rem .85rem; border-radius: 20px; margin-bottom: 1rem; }
+.totm-card { background: var(--card-bg); border: 1px solid #1e4070; border-radius: 16px; padding: 1.5rem; display: flex; gap: 1.25rem; align-items: flex-start; position: relative; overflow: hidden; }
+.totm-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #1e4070, #60a5fa, #1e4070); }
+.totm-icon { font-size: 2.5rem; line-height: 1; flex-shrink: 0; }
+.totm-body { flex: 1; }
+.totm-name { font-family: var(--font-head); font-size: 1.2rem; font-weight: 800; color: var(--text-primary); margin-bottom: .2rem; }
+.totm-cat { font-size: .75rem; color: #60a5fa; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; margin-bottom: .6rem; }
+.totm-desc { font-size: .9rem; color: var(--text-muted); line-height: 1.7; margin-bottom: .85rem; }
+.totm-meta { display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; }
+.totm-price { font-size: .85rem; font-weight: 700; color: var(--text-primary); }
+.totm-trial { font-size: .8rem; color: #4caf7d; font-weight: 600; }
+.totm-btn { display: inline-block; background: #60a5fa; color: #0a0a0a; padding: .55rem 1.2rem; border-radius: 8px; font-size: .875rem; font-weight: 700; text-decoration: none; transition: opacity .2s; }
+.totm-btn:hover { opacity: .85; }

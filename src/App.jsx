@@ -245,6 +245,26 @@ export default function App() {
               ))}
             </div>
 
+            {/* ── Tool of the Month ── */}
+            <div className="totm-section fade-up" style={{ animationDelay: '0.2s' }}>
+              <div className="totm-badge">⭐ Tool of the Month — April 2025</div>
+              <div className="totm-card">
+                <div className="totm-icon">🎙️</div>
+                <div className="totm-body">
+                  <div className="totm-name">ElevenLabs</div>
+                  <div className="totm-cat">AI Voiceover</div>
+                  <p className="totm-desc">The most realistic AI voices available — indistinguishable from real humans. Essential for any faceless YouTube creator. Clone your own voice or choose from 3,000+ pre-built voices in 29 languages.</p>
+                  <div className="totm-meta">
+                    <span className="totm-price">From $5/mo</span>
+                    <span className="totm-trial">✓ Free trial available</span>
+                  </div>
+                  <a href="https://try.elevenlabs.io/l55nms662wgu" target="_blank" rel="noopener noreferrer" className="totm-btn">
+                    Try ElevenLabs free →
+                  </a>
+                </div>
+              </div>
+            </div>
+
             <div className="how-section fade-up" style={{ animationDelay: '0.3s' }}>
               <div className="section-title">How it works</div>
               <div className="how-steps">
