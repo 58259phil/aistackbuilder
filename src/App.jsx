@@ -530,7 +530,7 @@ export default function App() {
               This disclosure is made in accordance with the FTC's guidelines on endorsements and testimonials, and equivalent regulations in Australia (ACCC), the UK (ASA/CAP), and the European Union.
             </p>
             <p>
-              If you have any questions about our affiliate relationships, please contact us at: <a href="mailto:hello@youraistackbuilder.com">hello@youraistackbuilder.com</a>
+              If you have any questions about our affiliate relationships, please contact us at: <a href="mailto:hello@aistackbuilder.tech">hello@aistackbuilder.tech</a>
             </p>
             <div style={{ marginTop: 24 }}>
               <button className="btn-ghost" onClick={() => { setPage('home'); restart() }}>← Back to home</button>
