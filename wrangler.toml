@@ -1,0 +1,6 @@
+name = "aistackbuilder"
+compatibility_date = "2024-01-01"
+
+[[kv_namespaces]]
+binding = "STACK_COUNTER"
+id = "0d258565adcf4658b7f46e58f539737a"
