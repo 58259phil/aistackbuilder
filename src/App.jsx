@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { TOOLS, EXP_ORDER, PAIN_LABELS, TYPE_LABELS } from './tools.js'
 import Blog, { BlogPost } from './Blog.jsx'
+import Comparisons, { ComparisonPost } from './Comparisons.jsx'
 import ToolCard from './ToolCard.jsx'
 import ToolOfTheMonth from './ToolOfTheMonth.jsx'
 import './index.css'
@@ -84,6 +85,7 @@ export default function App() {
   const [copied, setCopied]       = useState(false)
   const [shareUrl, setShareUrl]   = useState('')
   const [blogPostId, setBlogPostId] = useState(null)
+  const [compPostId, setCompPostId] = useState(null)
   const [stackCount, setStackCount] = useState(999)
 
   /* ── Fetch live counter on mount ── */
@@ -556,10 +558,28 @@ export default function App() {
           />
         )}
 
+        {/* ── Comparisons list ── */}
+        {page === 'comparisons' && (
+          <Comparisons
+            onBack={() => { setPage('home'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+            onPost={(id) => { setCompPostId(id); setPage('comppost'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+          />
+        )}
+
+        {/* ── Comparison post ── */}
+        {page === 'comppost' && (
+          <ComparisonPost
+            postId={compPostId}
+            onBack={() => { setPage('home'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+            onComparisons={() => { setPage('comparisons'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+          />
+        )}
+
         {/* ── Footer ── */}
         <footer className="footer">
           <span>© {new Date().getFullYear()} AI Stack Builder</span>
           <a href="#blog" onClick={e => { e.preventDefault(); setPage('blog'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>Blog</a>
+          <a href="#comparisons" onClick={e => { e.preventDefault(); setPage('comparisons'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>Comparisons</a>
           <a href="#disclosure" onClick={e => { e.preventDefault(); setPage('disclosure'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>Affiliate Disclosure</a>
           <a href="mailto:hello@aistackbuilder.tech">Contact</a>
           <span className="footer-right" style={{ color: 'var(--text-muted)', fontSize: 11 }}>
