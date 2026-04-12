@@ -921,3 +921,7 @@ body {
 .detail-features li::before { content: '→'; position: absolute; left: 0; color: #60a5fa; font-size: .75rem; }
 .detail-cta { display: inline-block; margin-top: 1rem; background: #60a5fa; color: #0a0a0a; padding: .55rem 1.2rem; border-radius: 8px; font-size: .875rem; font-weight: 700; text-decoration: none; transition: opacity .2s; }
 .detail-cta:hover { opacity: .85; }
+
+/* ── Inline counter next to button ── */
+.btn-counter-wrap { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.inline-counter { font-size: .8rem; color: var(--text-secondary); font-style: italic; }

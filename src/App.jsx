@@ -240,9 +240,14 @@ export default function App() {
               <div className="logo-pill"><span className="logo-dot" />Free tool · No signup required</div>
               <h1 className="h1">Your personalised AI tool stack — <span className="h1-accent">for YouTubers</span></h1>
               <p className="subtitle">Answer 4 quick questions. Get a curated list of the best AI tools matched to your channel type, budget, and goals.</p>
-              <button className="btn-primary btn-lg" onClick={() => { setPage('quiz'); track('quiz_started') }}>
-                Build my stack →
-              </button>
+              <div className="btn-counter-wrap">
+                <button className="btn-primary btn-lg" onClick={() => { setPage('quiz'); track('quiz_started') }}>
+                  Build my stack →
+                </button>
+                <span className="inline-counter">
+                  {stackCount.toLocaleString()} creators and counting
+                </span>
+              </div>
             </div>
 
             <div className="stat-row">
@@ -256,10 +261,6 @@ export default function App() {
                   <div className="stat-label">{s.label}</div>
                 </div>
               ))}
-              <div className="stat-card fade-up" style={{ animationDelay: '0.34s' }}>
-                <div className="stat-num">{stackCount.toLocaleString()}</div>
-                <div className="stat-label">Stacks built by creators</div>
-              </div>
             </div>
 
             {/* ── Tool of the Month — auto-rotates by month ── */}
