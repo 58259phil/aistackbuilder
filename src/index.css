@@ -922,8 +922,7 @@ body {
 .detail-cta { display: inline-block; margin-top: 1rem; background: #60a5fa; color: #0a0a0a; padding: .55rem 1.2rem; border-radius: 8px; font-size: .875rem; font-weight: 700; text-decoration: none; transition: opacity .2s; }
 .detail-cta:hover { opacity: .85; }
 
-/* ── Inline counter next to button ── */
-.btn-counter-wrap { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
-.counter-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: .6rem 1rem; text-align: center; min-width: 90px; }
-.counter-num { font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; color: #60a5fa; line-height: 1; }
-.counter-label { font-size: 11px; color: var(--text-secondary); margin-top: 3px; }
+/* ── Counter card between button and stats ── */
+.counter-card { display: inline-flex; align-items: center; gap: .6rem; background: var(--card-bg); border: 1px solid rgba(96,165,250,0.2); border-radius: 10px; padding: .5rem 1rem; margin-top: .75rem; }
+.counter-num { font-family: var(--font-display); font-size: 1.1rem; font-weight: 800; color: #60a5fa; line-height: 1; }
+.counter-label { font-size: 12px; color: var(--text-secondary); }
