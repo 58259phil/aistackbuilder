@@ -127,7 +127,7 @@ body {
 /* ── Header / Landing ── */
 .header {
   padding-top: 48px;
-  text-align: center;
+  text-align: left;
 }
 
 .logo-pill {
@@ -177,7 +177,7 @@ body {
   font-size: 15px;
   color: var(--text-secondary);
   max-width: 460px;
-  margin: 0 auto 32px;
+  margin: 0 0 32px;
   font-weight: 300;
   line-height: 1.75;
 }
@@ -187,7 +187,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  margin-top: 36px;
+  margin-top: 20px;
 }
 
 .stat-card {
@@ -923,6 +923,6 @@ body {
 .detail-cta:hover { opacity: .85; }
 
 /* ── Counter card between button and stats ── */
-.counter-card { display: inline-flex; align-items: center; gap: .6rem; background: var(--card-bg); border: 1px solid rgba(96,165,250,0.2); border-radius: 10px; padding: .5rem 1rem; margin-top: .5rem; margin-bottom: .5rem; }
+.counter-card { display: inline-flex; align-items: center; gap: .6rem; background: var(--card-bg); border: 1px solid rgba(96,165,250,0.2); border-radius: 10px; padding: .5rem 1rem; margin-top: 20px; margin-bottom: 0; }
 .counter-num { font-family: var(--font-display); font-size: 1.1rem; font-weight: 800; color: #60a5fa; line-height: 1; }
 .counter-label { font-size: 12px; color: var(--text-secondary); }
