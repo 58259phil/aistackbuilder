@@ -244,9 +244,10 @@ export default function App() {
                 <button className="btn-primary btn-lg" onClick={() => { setPage('quiz'); track('quiz_started') }}>
                   Build my stack →
                 </button>
-                <span className="inline-counter">
-                  {stackCount.toLocaleString()} creators and counting
-                </span>
+                <div className="counter-card">
+                  <div className="counter-num">{stackCount.toLocaleString()}</div>
+                  <div className="counter-label">Stacks built</div>
+                </div>
               </div>
             </div>
 
