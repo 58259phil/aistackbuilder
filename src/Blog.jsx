@@ -269,9 +269,7 @@ export const POSTS = [
   },
 ]
 
-// Merge all posts
-export const ALL_POSTS = [...POSTS, ...NEW_POSTS]
-
+// Note: ALL_POSTS is defined after NEW_POSTS below
 export default function Blog({ onBack, onPost }) {
   return (
     <div className="blog-list">
@@ -587,3 +585,6 @@ export const NEW_POSTS = [
     ]
   },
 ]
+
+// Merge all posts — must be after both POSTS and NEW_POSTS are defined
+export const ALL_POSTS = [...POSTS, ...NEW_POSTS]
