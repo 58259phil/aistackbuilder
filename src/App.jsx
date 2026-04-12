@@ -243,10 +243,11 @@ export default function App() {
               <button className="btn-primary btn-lg" onClick={() => { setPage('quiz'); track('quiz_started') }}>
                 Build my stack →
               </button>
-              <div className="counter-card fade-up" style={{ animationDelay: '0.08s' }}>
-                <div className="counter-num">{stackCount.toLocaleString()}</div>
-                <div className="counter-label">Stacks built by creators</div>
-              </div>
+            </div>
+
+            <div className="counter-card fade-up" style={{ animationDelay: '0.08s' }}>
+              <div className="counter-num">{stackCount.toLocaleString()}</div>
+              <div className="counter-label">Stacks built by creators</div>
             </div>
 
             <div className="stat-row">
