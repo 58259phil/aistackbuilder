@@ -84,6 +84,12 @@ export default function App() {
   const [copied, setCopied]       = useState(false)
   const [shareUrl, setShareUrl]   = useState('')
   const [blogPostId, setBlogPostId] = useState(null)
+  const [stackCount, setStackCount] = useState(999)
+
+  /* ── Fetch live counter on mount ── */
+  useEffect(() => {
+    fetch('/api/counter').then(r => r.json()).then(d => setStackCount(d.count)).catch(() => {})
+  }, [])
 
   /* ── Load state from URL on mount ── */
   useEffect(() => {
@@ -118,6 +124,11 @@ export default function App() {
     window.history.replaceState({}, '', `?${encodeState(ct, b, pp, e)}`)
     window.scrollTo({ top: 0, behavior: 'smooth' })
     track('stack_built', { type: ct, budget: b, exp: e, tool_count: result.length })
+    // Increment the live counter
+    fetch('/api/counter', { method: 'POST' })
+      .then(r => r.json())
+      .then(d => setStackCount(d.count))
+      .catch(() => {})
   }
 
   function buildStack() {
@@ -245,6 +256,10 @@ export default function App() {
                   <div className="stat-label">{s.label}</div>
                 </div>
               ))}
+              <div className="stat-card fade-up" style={{ animationDelay: '0.34s' }}>
+                <div className="stat-num">{stackCount.toLocaleString()}</div>
+                <div className="stat-label">Stacks built by creators</div>
+              </div>
             </div>
 
             {/* ── Tool of the Month — auto-rotates by month ── */}
