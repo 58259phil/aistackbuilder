@@ -89,7 +89,7 @@ export const TOOLS = [
       bestFor: 'Tutorial and e-learning creators who need to sync voiceover to screen recordings or slideshows without a separate video editor.',
     },
     commission: '20% recurring for 24 months', commissionNum: 5.8, cookie: '90 days',
-    affiliateUrl: 'https://murf.ai/partner-with-us/affiliate',
+    affiliateUrl: 'https://get.murf.ai/ldyg2dz5vfw3',
     tags: ['voiceover'], types: ['faceless','tutorial','podcast'], minExp: 'new', hasTrial: true,
   },
   {

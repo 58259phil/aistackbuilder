@@ -9,7 +9,7 @@ export const COMPARISONS = [
     readTime: '9 min read',
     excerpt: 'ElevenLabs and Murf AI are the two most popular AI voiceover tools for YouTube creators. They take fundamentally different approaches — here is the honest technical breakdown to help you choose.',
     tool1: { name: 'ElevenLabs', url: 'https://try.elevenlabs.io/l55nms662wgu' },
-    tool2: { name: 'Murf AI', url: 'https://murf.ai/partner-with-us/affiliate' },
+    tool2: { name: 'Murf AI', url: 'https://get.murf.ai/ldyg2dz5vfw3' },
     verdict: 'elevenlabs',
     verdictReason: 'ElevenLabs wins for most YouTube creators — better voice quality, lower entry price, voice cloning, and API access. Murf wins for teams producing narrated presentations or corporate video at volume.',
     content: [
@@ -44,7 +44,7 @@ export const COMPARISONS = [
       { type: 'affiliate', name: 'ElevenLabs', url: 'https://try.elevenlabs.io/l55nms662wgu', cta: 'Try ElevenLabs free →' },
       { type: 'h2', text: 'Who should use Murf AI' },
       { type: 'paragraph', text: 'Murf AI is the right choice if you are: producing narrated presentations, slide decks, or e-learning content where timeline sync matters; part of a team that needs collaboration features and shared project access; a corporate or agency producer who values workflow integration over raw audio quality; or producing high-volume batch narration where the built-in editor saves significant time per project. The per-user pricing model makes Murf expensive for teams but its feature set at that price point is genuinely competitive.' },
-      { type: 'affiliate', name: 'Murf AI', url: 'https://murf.ai/partner-with-us/affiliate', cta: 'Try Murf AI free →' },
+      { type: 'affiliate', name: 'Murf AI', url: 'https://get.murf.ai/ldyg2dz5vfw3', cta: 'Try Murf AI free →' },
       { type: 'h2', text: 'The verdict' },
       { type: 'paragraph', text: 'For the majority of YouTube creators, ElevenLabs is the better tool. The voice quality is meaningfully superior, the free plan is genuinely usable, and voice cloning opens up brand consistency options that Murf simply does not offer. The price advantage at entry level is significant. Murf AI earns its place for a specific use case — teams producing narrated visual content where the built-in editor saves enough time to justify the higher cost and the quality trade-off. There is also a legitimate case for using both: ElevenLabs for your main channel narration and character voices, Murf for batch-producing simpler narrated explainers where speed matters more than emotional depth.' },
     ]
