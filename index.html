@@ -49,7 +49,21 @@
   }
   </script>
 
-  <!-- Google Analytics -->
+  <!-- Critical CSS inline for above-the-fold render -->
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background:#080808;color:#f0ede8;font-family:'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+    #root{min-height:100vh}
+    .page{min-height:100vh;padding:0 1rem}
+    .container{max-width:680px;margin:0 auto}
+    .header{padding-top:48px;text-align:left}
+    .h1{font-family:'Syne',system-ui,sans-serif;font-size:clamp(26px,6vw,50px);font-weight:800;line-height:1.1;color:#f0ede8;margin-bottom:16px}
+    .h1-accent{background:linear-gradient(135deg,#60a5fa 0%,#93c5fd 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:#60a5fa;color:#080808;border:none;border-radius:10px;font-weight:700;cursor:pointer;padding:13px 30px;font-size:15px}
+    .counter-card{display:flex;align-items:center;gap:.4rem;background:#121212;border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:10px 14px;margin-top:20px}
+    .counter-num{font-family:'Syne',system-ui,sans-serif;font-size:.9rem;font-weight:800;color:#60a5fa}
+    .counter-label{font-size:11px;color:#8a8680}
+  </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FS3BGKSPYH"></script>
   <script>
     window.dataLayer = window.dataLayer || [];

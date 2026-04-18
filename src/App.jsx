@@ -89,11 +89,16 @@ export default function App() {
   const [shareUrl, setShareUrl]   = useState('')
   const [blogPostId, setBlogPostId] = useState(null)
   const [compPostId, setCompPostId] = useState(null)
-  const [stackCount, setStackCount] = useState(999)
+  const [stackCount, setStackCount] = useState(() => {
+    try { return parseInt(localStorage.getItem('stackCount') || '999') } catch { return 999 }
+  })
 
   /* ── Fetch live counter on mount ── */
   useEffect(() => {
-    fetch('/api/counter').then(r => r.json()).then(d => setStackCount(d.count)).catch(() => {})
+    fetch('/api/counter').then(r => r.json()).then(d => {
+      setStackCount(d.count)
+      try { localStorage.setItem('stackCount', String(d.count)) } catch {}
+    }).catch(() => {})
   }, [])
 
   /* ── Load state from URL on mount ── */
