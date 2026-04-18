@@ -1,10 +1,13 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, lazy, Suspense } from 'react'
 import { TOOLS, EXP_ORDER, PAIN_LABELS, TYPE_LABELS } from './tools.js'
-import Blog, { BlogPost } from './Blog.jsx'
-import Comparisons, { ComparisonPost } from './Comparisons.jsx'
 import ToolCard from './ToolCard.jsx'
 import ToolOfTheMonth from './ToolOfTheMonth.jsx'
 import './index.css'
+
+const Blog = lazy(() => import('./Blog.jsx'))
+const BlogPostComponent = lazy(() => import('./Blog.jsx').then(m => ({ default: m.BlogPost })))
+const Comparisons = lazy(() => import('./Comparisons.jsx'))
+const ComparisonPost = lazy(() => import('./Comparisons.jsx').then(m => ({ default: m.ComparisonPost })))
 
 /* ── Analytics helper — swap in your GA4 / Plausible calls here ── */
 function track(event, props = {}) {
@@ -543,36 +546,44 @@ export default function App() {
 
         {/* ── Blog list ── */}
         {page === 'blog' && (
-          <Blog
-            onBack={() => { setPage('home'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
-            onPost={(id) => { setBlogPostId(id); setPage('blogpost'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
-          />
+          <Suspense fallback={<div className="loading-spin">Loading...</div>}>
+            <Blog
+              onBack={() => { setPage('home'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+              onPost={(id) => { setBlogPostId(id); setPage('blogpost'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+            />
+          </Suspense>
         )}
 
         {/* ── Blog post ── */}
         {page === 'blogpost' && (
-          <BlogPost
-            postId={blogPostId}
-            onBack={() => { setPage('home'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
-            onBlog={() => { setPage('blog'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
-          />
+          <Suspense fallback={<div className="loading-spin">Loading...</div>}>
+            <BlogPostComponent
+              postId={blogPostId}
+              onBack={() => { setPage('home'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+              onBlog={() => { setPage('blog'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+            />
+          </Suspense>
         )}
 
         {/* ── Comparisons list ── */}
         {page === 'comparisons' && (
-          <Comparisons
-            onBack={() => { setPage('home'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
-            onPost={(id) => { setCompPostId(id); setPage('comppost'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
-          />
+          <Suspense fallback={<div className="loading-spin">Loading...</div>}>
+            <Comparisons
+              onBack={() => { setPage('home'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+              onPost={(id) => { setCompPostId(id); setPage('comppost'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+            />
+          </Suspense>
         )}
 
         {/* ── Comparison post ── */}
         {page === 'comppost' && (
-          <ComparisonPost
-            postId={compPostId}
-            onBack={() => { setPage('home'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
-            onComparisons={() => { setPage('comparisons'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
-          />
+          <Suspense fallback={<div className="loading-spin">Loading...</div>}>
+            <ComparisonPost
+              postId={compPostId}
+              onBack={() => { setPage('home'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+              onComparisons={() => { setPage('comparisons'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+            />
+          </Suspense>
         )}
 
         {/* ── Footer ── */}
