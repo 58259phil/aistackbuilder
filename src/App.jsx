@@ -111,6 +111,22 @@ export default function App() {
     }
     // Check for disclosure anchor
     if (window.location.hash === '#disclosure') setPage('disclosure')
+
+    // Path-based routing for pre-rendered pages
+    const pathname = window.location.pathname
+    const blogMatch = pathname.match(/^\/blog\/([^/]+)\/?$/)
+    const compMatch = pathname.match(/^\/compare\/([^/]+)\/?$/)
+    if (blogMatch) {
+      setBlogPostId(blogMatch[1])
+      setPage('blogpost')
+    } else if (pathname === '/blog' || pathname === '/blog/') {
+      setPage('blog')
+    } else if (compMatch) {
+      setCompPostId(compMatch[1])
+      setPage('comppost')
+    } else if (pathname === '/compare' || pathname === '/compare/') {
+      setPage('comparisons')
+    }
   }, [])
 
   /* ── Build stack ── */
@@ -553,8 +569,8 @@ export default function App() {
         {page === 'blog' && (
           <Suspense fallback={<div className="loading-spin">Loading...</div>}>
             <Blog
-              onBack={() => { setPage('home'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
-              onPost={(id) => { setBlogPostId(id); setPage('blogpost'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+              onBack={() => { setPage('home'); window.history.pushState({}, '', '/'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+              onPost={(id) => { setBlogPostId(id); setPage('blogpost'); window.history.pushState({}, '', `/blog/${id}/`); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
             />
           </Suspense>
         )}
@@ -564,8 +580,8 @@ export default function App() {
           <Suspense fallback={<div className="loading-spin">Loading...</div>}>
             <BlogPostComponent
               postId={blogPostId}
-              onBack={() => { setPage('home'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
-              onBlog={() => { setPage('blog'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+              onBack={() => { setPage('home'); window.history.pushState({}, '', '/'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+              onBlog={() => { setPage('blog'); window.history.pushState({}, '', '/blog/'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
             />
           </Suspense>
         )}
@@ -574,8 +590,8 @@ export default function App() {
         {page === 'comparisons' && (
           <Suspense fallback={<div className="loading-spin">Loading...</div>}>
             <Comparisons
-              onBack={() => { setPage('home'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
-              onPost={(id) => { setCompPostId(id); setPage('comppost'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+              onBack={() => { setPage('home'); window.history.pushState({}, '', '/'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+              onPost={(id) => { setCompPostId(id); setPage('comppost'); window.history.pushState({}, '', `/compare/${id}/`); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
             />
           </Suspense>
         )}
@@ -585,8 +601,8 @@ export default function App() {
           <Suspense fallback={<div className="loading-spin">Loading...</div>}>
             <ComparisonPost
               postId={compPostId}
-              onBack={() => { setPage('home'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
-              onComparisons={() => { setPage('comparisons'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+              onBack={() => { setPage('home'); window.history.pushState({}, '', '/'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+              onComparisons={() => { setPage('comparisons'); window.history.pushState({}, '', '/compare/'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
             />
           </Suspense>
         )}
@@ -594,8 +610,8 @@ export default function App() {
         {/* ── Footer ── */}
         <footer className="footer">
           <span>© {new Date().getFullYear()} AI Stack Builder</span>
-          <a href="#blog" onClick={e => { e.preventDefault(); setPage('blog'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>Blog</a>
-          <a href="#comparisons" onClick={e => { e.preventDefault(); setPage('comparisons'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>Comparisons</a>
+          <a href="/blog/" onClick={e => { e.preventDefault(); setPage('blog'); window.history.pushState({}, '', '/blog/'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>Blog</a>
+          <a href="/compare/" onClick={e => { e.preventDefault(); setPage('comparisons'); window.history.pushState({}, '', '/compare/'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>Comparisons</a>
           <a href="#disclosure" onClick={e => { e.preventDefault(); setPage('disclosure'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>Affiliate Disclosure</a>
           <a href="mailto:hello@aistackbuilder.tech">Contact</a>
           <span className="footer-right" style={{ color: 'var(--text-muted)', fontSize: 11 }}>
