@@ -238,6 +238,20 @@ export default function App() {
     return matched ? WHY_MAP[matched] : null
   }
 
+  /* ── Navigation helpers ── */
+  function goToBlog(e) {
+    e?.preventDefault()
+    setPage('blog')
+    window.history.pushState({}, '', '/blog/')
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+  function goToCompare(e) {
+    e?.preventDefault()
+    setPage('comparisons')
+    window.history.pushState({}, '', '/compare/')
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   /* ════════════════════════════════════════
      RENDER
   ════════════════════════════════════════ */
@@ -255,6 +269,8 @@ export default function App() {
             {page !== 'home' && (
               <a className="topnav-link" href="/" onClick={e => { e.preventDefault(); restart() }}>Home</a>
             )}
+            <a className="topnav-link topnav-link-strong" href="/blog/" onClick={goToBlog}>Blog</a>
+            <a className="topnav-link topnav-link-strong" href="/compare/" onClick={goToCompare}>Compare</a>
             <a className="topnav-link" href="#disclosure" onClick={e => { e.preventDefault(); setPage('disclosure'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>Disclosure</a>
           </div>
         </nav>
@@ -287,6 +303,26 @@ export default function App() {
                   <div className="stat-label">{s.label}</div>
                 </div>
               ))}
+            </div>
+
+            {/* ── Explore cards: Blog & Comparisons ── */}
+            <div className="explore-cards fade-up" style={{ animationDelay: '0.2s' }}>
+              <a href="/blog/" className="explore-card" onClick={goToBlog}>
+                <div className="explore-card-icon">📚</div>
+                <div className="explore-card-body">
+                  <div className="explore-card-title">Read our guides</div>
+                  <div className="explore-card-desc">20 in-depth articles on AI tools for YouTube creators</div>
+                </div>
+                <div className="explore-card-arrow">→</div>
+              </a>
+              <a href="/compare/" className="explore-card" onClick={goToCompare}>
+                <div className="explore-card-icon">⚖️</div>
+                <div className="explore-card-body">
+                  <div className="explore-card-title">Compare tools</div>
+                  <div className="explore-card-desc">5 head-to-head comparisons of top AI tools</div>
+                </div>
+                <div className="explore-card-arrow">→</div>
+              </a>
             </div>
 
             {/* ── Tool of the Month — auto-rotates by month ── */}
@@ -610,8 +646,8 @@ export default function App() {
         {/* ── Footer ── */}
         <footer className="footer">
           <span>© {new Date().getFullYear()} AI Stack Builder</span>
-          <a href="/blog/" onClick={e => { e.preventDefault(); setPage('blog'); window.history.pushState({}, '', '/blog/'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>Blog</a>
-          <a href="/compare/" onClick={e => { e.preventDefault(); setPage('comparisons'); window.history.pushState({}, '', '/compare/'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>Comparisons</a>
+          <a href="/blog/" onClick={goToBlog}>Blog</a>
+          <a href="/compare/" onClick={goToCompare}>Comparisons</a>
           <a href="#disclosure" onClick={e => { e.preventDefault(); setPage('disclosure'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>Affiliate Disclosure</a>
           <a href="mailto:hello@aistackbuilder.tech">Contact</a>
           <span className="footer-right" style={{ color: 'var(--text-muted)', fontSize: 11 }}>
@@ -623,5 +659,3 @@ export default function App() {
     </div>
   )
 }
-
-
