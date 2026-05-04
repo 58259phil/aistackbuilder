@@ -302,7 +302,25 @@ export function ComparisonPost({ postId, onBack, onComparisons }) {
     depends: 'Verdict: Depends on your workflow',
     vidiq: `Winner: ${post.tool1.name}`,
     heygen: `Winner: ${post.tool1.name}`,
+    chatgpt: `Winner: ${post.tool2.name}`,
   }
+
+  const contentLength = post.content.length
+  const midIndex = Math.floor(contentLength / 2)
+  const verdictIndex = post.content.findIndex(
+    b => b.type === 'h2' && b.text.toLowerCase().includes('verdict')
+  )
+
+  const handleCTA = (e) => {
+    e.preventDefault()
+    onBack()
+  }
+
+  const InlineCTA = ({ text, id }) => (
+    <p key={id} className="blog-inline-cta">
+      <a href="#" onClick={handleCTA}>{text}</a>
+    </p>
+  )
 
   return (
     <div className="blog-post">
@@ -324,16 +342,19 @@ export function ComparisonPost({ postId, onBack, onComparisons }) {
       </div>
 
       <div className="blog-post-content">
-        {post.content.map((block, i) => {
-          if (block.type === 'intro') return <p key={i} className="blog-intro">{block.text}</p>
-          if (block.type === 'h2') return <h2 key={i} className="blog-h2">{block.text}</h2>
-          if (block.type === 'paragraph') return <p key={i} className="blog-p">{block.text}</p>
-          if (block.type === 'affiliate') return (
+        {post.content.flatMap((block, i) => {
+          const elements = []
+
+          // Render the block
+          if (block.type === 'intro') elements.push(<p key={i} className="blog-intro">{block.text}</p>)
+          else if (block.type === 'h2') elements.push(<h2 key={i} className="blog-h2">{block.text}</h2>)
+          else if (block.type === 'paragraph') elements.push(<p key={i} className="blog-p">{block.text}</p>)
+          else if (block.type === 'affiliate') elements.push(
             <div key={i} className="blog-affiliate">
               <a href={block.url} target="_blank" rel="noopener noreferrer" className="blog-affiliate-btn">{block.cta}</a>
             </div>
           )
-          if (block.type === 'table') return (
+          else if (block.type === 'table') elements.push(
             <div key={i} className="comp-table-wrap">
               <table className="comp-table">
                 <tbody>
@@ -350,9 +371,22 @@ export function ComparisonPost({ postId, onBack, onComparisons }) {
               </table>
             </div>
           )
-          return null
+
+          // Inject inline CTAs at key positions
+          if (block.type === 'intro') {
+            elements.push(<InlineCTA key={`cta-top-${i}`} id={`cta-top-${i}`} text="Get your personalised AI tool stack →" />)
+          }
+          if (i === midIndex) {
+            elements.push(<InlineCTA key={`cta-mid-${i}`} id={`cta-mid-${i}`} text="Find the best tools for your channel →" />)
+          }
+          if (verdictIndex > 0 && i === verdictIndex - 1) {
+            elements.push(<InlineCTA key={`cta-pre-verdict-${i}`} id={`cta-pre-verdict-${i}`} text="Build your YouTube AI system →" />)
+          }
+
+          return elements
         })}
       </div>
+
       <div className="blog-post-cta">
         <p>Not sure which tools are right for your channel?</p>
         <button className="btn-primary" onClick={onBack}>Build my free AI stack →</button>
