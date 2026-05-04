@@ -294,6 +294,22 @@ export function BlogPost({ postId, onBack, onBlog }) {
   const post = ALL_POSTS.find(p => p.id === postId)
   if (!post) return null
 
+  const contentLength = post.content.length
+  const midIndex = Math.floor(contentLength / 2)
+  const lastH2Index = post.content.reduce((acc, block, i) => block.type === 'h2' ? i : acc, -1)
+  const preLastH2Index = lastH2Index > 0 ? lastH2Index - 1 : -1
+
+  const handleCTA = (e) => {
+    e.preventDefault()
+    onBack()
+  }
+
+  const InlineCTA = ({ text, id }) => (
+    <p key={id} className="blog-inline-cta">
+      <a href="#" onClick={handleCTA}>{text}</a>
+    </p>
+  )
+
   return (
     <div className="blog-post">
       <div className="blog-post-nav">
@@ -303,18 +319,32 @@ export function BlogPost({ postId, onBack, onBlog }) {
       <div className="blog-post-meta">{post.date} · {post.readTime}</div>
       <h1 className="blog-post-title">{post.title}</h1>
       <div className="blog-post-content">
-        {post.content.map((block, i) => {
-          if (block.type === 'intro') return <p key={i} className="blog-intro">{block.text}</p>
-          if (block.type === 'h2') return <h2 key={i} className="blog-h2">{block.text}</h2>
-          if (block.type === 'paragraph') return <p key={i} className="blog-p">{block.text}</p>
-          if (block.type === 'affiliate') return (
+        {post.content.flatMap((block, i) => {
+          const elements = []
+
+          if (block.type === 'intro') elements.push(<p key={i} className="blog-intro">{block.text}</p>)
+          else if (block.type === 'h2') elements.push(<h2 key={i} className="blog-h2">{block.text}</h2>)
+          else if (block.type === 'paragraph') elements.push(<p key={i} className="blog-p">{block.text}</p>)
+          else if (block.type === 'affiliate') elements.push(
             <div key={i} className="blog-affiliate">
               <a href={block.url} target="_blank" rel="noopener noreferrer" className="blog-affiliate-btn">
                 {block.cta}
               </a>
             </div>
           )
-          return null
+
+          // Inject inline CTAs at key positions
+          if (block.type === 'intro') {
+            elements.push(<InlineCTA key={`cta-top-${i}`} id={`cta-top-${i}`} text="Get your personalised AI tool stack →" />)
+          }
+          if (i === midIndex) {
+            elements.push(<InlineCTA key={`cta-mid-${i}`} id={`cta-mid-${i}`} text="Find the best tools for your channel →" />)
+          }
+          if (preLastH2Index > 0 && i === preLastH2Index) {
+            elements.push(<InlineCTA key={`cta-pre-final-${i}`} id={`cta-pre-final-${i}`} text="Build your YouTube AI system →" />)
+          }
+
+          return elements
         })}
       </div>
       <div className="blog-post-cta">
