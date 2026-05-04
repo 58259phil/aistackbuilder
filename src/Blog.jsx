@@ -1,5 +1,17 @@
 /* ── Blog component ── */
 
+/* ── Reusable Stack Builder CTA Card ── */
+function StackCTACard({ heading, subtext, btnText, linkText, onBack }) {
+  return (
+    <div className="stack-cta-card">
+      <p className="stack-cta-heading">{heading}</p>
+      <p className="stack-cta-sub">{subtext}</p>
+      <button className="btn-primary stack-cta-btn" onClick={onBack}>{btnText}</button>
+      <a href="#" className="stack-cta-link" onClick={(e) => { e.preventDefault(); onBack(); }}>{linkText}</a>
+    </div>
+  )
+}
+
 export const POSTS = [
   {
     id: 'best-ai-tools-faceless-youtube',
@@ -299,17 +311,6 @@ export function BlogPost({ postId, onBack, onBlog }) {
   const lastH2Index = post.content.reduce((acc, block, i) => block.type === 'h2' ? i : acc, -1)
   const preLastH2Index = lastH2Index > 0 ? lastH2Index - 1 : -1
 
-  const handleCTA = (e) => {
-    e.preventDefault()
-    onBack()
-  }
-
-  const InlineCTA = ({ text, id }) => (
-    <p key={id} className="blog-inline-cta">
-      <a href="#" onClick={handleCTA}>{text}</a>
-    </p>
-  )
-
   return (
     <div className="blog-post">
       <div className="blog-post-nav">
@@ -333,15 +334,43 @@ export function BlogPost({ postId, onBack, onBlog }) {
             </div>
           )
 
-          // Inject inline CTAs at key positions
           if (block.type === 'intro') {
-            elements.push(<InlineCTA key={`cta-top-${i}`} id={`cta-top-${i}`} text="Get your personalised AI tool stack →" />)
+            elements.push(
+              <StackCTACard
+                key={`cta-top-${i}`}
+                heading="Not sure which tools are right for your channel?"
+                subtext="Skip the guesswork — get a personalised AI tool stack based on your budget, content type, and experience."
+                btnText="Build my AI stack →"
+                linkText="Takes 30 seconds, it's free →"
+                onBack={onBack}
+              />
+            )
           }
+
           if (i === midIndex) {
-            elements.push(<InlineCTA key={`cta-mid-${i}`} id={`cta-mid-${i}`} text="Find the best tools for your channel →" />)
+            elements.push(
+              <StackCTACard
+                key={`cta-mid-${i}`}
+                heading="Still deciding?"
+                subtext="Find out which tools fit your workflow in under 2 minutes."
+                btnText="Build my AI stack →"
+                linkText="It's free →"
+                onBack={onBack}
+              />
+            )
           }
+
           if (preLastH2Index > 0 && i === preLastH2Index) {
-            elements.push(<InlineCTA key={`cta-pre-final-${i}`} id={`cta-pre-final-${i}`} text="Build your YouTube AI system →" />)
+            elements.push(
+              <StackCTACard
+                key={`cta-pre-final-${i}`}
+                heading="Ready to build your stack?"
+                subtext="Get a personalised recommendation based on your channel type and budget."
+                btnText="Build my AI stack →"
+                linkText="See how it works →"
+                onBack={onBack}
+              />
+            )
           }
 
           return elements

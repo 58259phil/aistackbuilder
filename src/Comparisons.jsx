@@ -264,6 +264,18 @@ export const COMPARISONS = [
   },
 ]
 
+/* ── Reusable Stack Builder CTA Card ── */
+function StackCTACard({ heading, subtext, btnText, linkText, onBack }) {
+  return (
+    <div className="stack-cta-card">
+      <p className="stack-cta-heading">{heading}</p>
+      <p className="stack-cta-sub">{subtext}</p>
+      <button className="btn-primary stack-cta-btn" onClick={onBack}>{btnText}</button>
+      <a href="#" className="stack-cta-link" onClick={(e) => { e.preventDefault(); onBack(); }}>{linkText}</a>
+    </div>
+  )
+}
+
 /* ── Comparison List Page ── */
 export default function Comparisons({ onBack, onPost }) {
   return (
@@ -311,17 +323,6 @@ export function ComparisonPost({ postId, onBack, onComparisons }) {
     b => b.type === 'h2' && b.text.toLowerCase().includes('verdict')
   )
 
-  const handleCTA = (e) => {
-    e.preventDefault()
-    onBack()
-  }
-
-  const InlineCTA = ({ text, id }) => (
-    <p key={id} className="blog-inline-cta">
-      <a href="#" onClick={handleCTA}>{text}</a>
-    </p>
-  )
-
   return (
     <div className="blog-post">
       <div className="blog-post-nav">
@@ -331,7 +332,6 @@ export function ComparisonPost({ postId, onBack, onComparisons }) {
       <div className="blog-post-meta">{post.date} · {post.readTime}</div>
       <h1 className="blog-post-title">{post.title}</h1>
 
-      {/* Verdict banner */}
       <div className="verdict-banner">
         <div className="verdict-label">{verdictLabel[post.verdict] || 'Our verdict'}</div>
         <p className="verdict-text">{post.verdictReason}</p>
@@ -345,7 +345,6 @@ export function ComparisonPost({ postId, onBack, onComparisons }) {
         {post.content.flatMap((block, i) => {
           const elements = []
 
-          // Render the block
           if (block.type === 'intro') elements.push(<p key={i} className="blog-intro">{block.text}</p>)
           else if (block.type === 'h2') elements.push(<h2 key={i} className="blog-h2">{block.text}</h2>)
           else if (block.type === 'paragraph') elements.push(<p key={i} className="blog-p">{block.text}</p>)
@@ -372,15 +371,43 @@ export function ComparisonPost({ postId, onBack, onComparisons }) {
             </div>
           )
 
-          // Inject inline CTAs at key positions
           if (block.type === 'intro') {
-            elements.push(<InlineCTA key={`cta-top-${i}`} id={`cta-top-${i}`} text="Get your personalised AI tool stack →" />)
+            elements.push(
+              <StackCTACard
+                key={`cta-top-${i}`}
+                heading={`Not sure whether ${post.tool1.name} or ${post.tool2.name} fits your workflow?`}
+                subtext="Skip the guesswork — get a personalised AI tool stack based on your budget, content type, and experience."
+                btnText="Build my AI stack →"
+                linkText="Takes 30 seconds, it's free →"
+                onBack={onBack}
+              />
+            )
           }
+
           if (i === midIndex) {
-            elements.push(<InlineCTA key={`cta-mid-${i}`} id={`cta-mid-${i}`} text="Find the best tools for your channel →" />)
+            elements.push(
+              <StackCTACard
+                key={`cta-mid-${i}`}
+                heading="Still deciding?"
+                subtext="Find out which tools fit your workflow in under 2 minutes."
+                btnText="Build my AI stack →"
+                linkText="It's free →"
+                onBack={onBack}
+              />
+            )
           }
+
           if (verdictIndex > 0 && i === verdictIndex - 1) {
-            elements.push(<InlineCTA key={`cta-pre-verdict-${i}`} id={`cta-pre-verdict-${i}`} text="Build your YouTube AI system →" />)
+            elements.push(
+              <StackCTACard
+                key={`cta-verdict-${i}`}
+                heading={`Still deciding between ${post.tool1.name} and ${post.tool2.name}?`}
+                subtext="Get a personalised recommendation based on your channel type and budget."
+                btnText="Build my AI stack →"
+                linkText="See how it works →"
+                onBack={onBack}
+              />
+            )
           }
 
           return elements
