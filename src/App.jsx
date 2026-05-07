@@ -14,7 +14,6 @@ function track(event, props = {}) {
   if (typeof window.gtag === 'function') {
     window.gtag('event', event, props)
   }
-  // Plausible: if (typeof window.plausible === 'function') window.plausible(event, { props })
   console.debug('[analytics]', event, props)
 }
 
@@ -72,7 +71,7 @@ const WHY_MAP = {
 
 /* ── Main App ── */
 export default function App() {
-  const [page, setPage]           = useState('home') // 'home' | 'quiz' | 'results' | 'disclosure' | 'blog' | 'blogpost'
+  const [page, setPage]           = useState('home')
   const [step, setStep]           = useState(1)
   const [channelType, setChannelType] = useState(null)
   const [budget, setBudget]       = useState(50)
@@ -93,7 +92,6 @@ export default function App() {
     try { return parseInt(localStorage.getItem('stackCount') || '999') } catch { return 999 }
   })
 
-  /* ── Fetch live counter on mount ── */
   useEffect(() => {
     fetch('/api/counter').then(r => r.json()).then(d => {
       setStackCount(d.count)
@@ -101,7 +99,6 @@ export default function App() {
     }).catch(() => {})
   }, [])
 
-  /* ── Load state from URL on mount ── */
   useEffect(() => {
     const { channelType: ct, budget: b, painPoints: pp, exp: e } = decodeState(window.location.search)
     if (ct && pp.size && e) {
@@ -109,10 +106,8 @@ export default function App() {
       computeAndShowStack(ct, b, pp, e)
       track('shared_link_loaded', { type: ct })
     }
-    // Check for disclosure anchor
     if (window.location.hash === '#disclosure') setPage('disclosure')
 
-    // Path-based routing for pre-rendered pages
     const pathname = window.location.pathname
     const blogMatch = pathname.match(/^\/blog\/([^/]+)\/?$/)
     const compMatch = pathname.match(/^\/compare\/([^/]+)\/?$/)
@@ -129,7 +124,6 @@ export default function App() {
     }
   }, [])
 
-  /* ── Build stack ── */
   function computeAndShowStack(ct, b, pp, e) {
     const userExpVal = EXP_ORDER[e]
     const filtered = TOOLS.filter(t =>
@@ -150,7 +144,6 @@ export default function App() {
     window.history.replaceState({}, '', `?${encodeState(ct, b, pp, e)}`)
     window.scrollTo({ top: 0, behavior: 'smooth' })
     track('stack_built', { type: ct, budget: b, exp: e, tool_count: result.length })
-    // Increment the live counter
     fetch('/api/counter', { method: 'POST' })
       .then(r => r.json())
       .then(d => setStackCount(d.count))
@@ -178,13 +171,11 @@ export default function App() {
     })
   }
 
-  /* ── Email submit — calls Netlify function → Resend ── */
   async function handleEmailSubmit(e) {
     e.preventDefault()
     if (!emailVal.includes('@')) return
     setEmailLoading(true)
     track('email_submitted', { type: channelType })
-
     try {
       const res = await fetch('/api/subscribe', {
         method: 'POST',
@@ -196,7 +187,6 @@ export default function App() {
           tools: stack.map(t => ({ name: t.name, desc: t.desc, price: t.price, affiliateUrl: t.affiliateUrl })),
         }),
       })
-
       if (!res.ok) throw new Error('Server error')
       setEmailSent(true)
     } catch (err) {
@@ -207,7 +197,6 @@ export default function App() {
     }
   }
 
-  /* ── Copy share URL ── */
   function copyUrl() {
     navigator.clipboard?.writeText(shareUrl).catch(() => {})
     setCopied(true)
@@ -215,7 +204,6 @@ export default function App() {
     setTimeout(() => setCopied(false), 2000)
   }
 
-  /* ── Derived results data ── */
   const categories = stack ? ['all', ...new Set(stack.map(t => t.cat))] : []
 
   const displayedStack = stack ? [...stack]
@@ -224,7 +212,7 @@ export default function App() {
     .sort((a, b) => {
       if (sortBy === 'price-asc') return a.price - b.price
       if (sortBy === 'price-desc') return b.price - a.price
-      return b.commissionNum - a.commissionNum // default: match (best commission first)
+      return b.commissionNum - a.commissionNum
     }) : []
 
   const withAffiliate = displayedStack.filter(t => t.commissionNum > 0)
@@ -232,13 +220,11 @@ export default function App() {
   const totalCost     = stack ? stack.reduce((s, t) => s + t.price, 0) : 0
   const sliderPct     = Math.round(((budget - 25) / (250 - 25)) * 100)
 
-  /* ── Why matched ── */
   function getWhy(tool) {
     const matched = tool.tags.find(tag => painPoints.has(tag))
     return matched ? WHY_MAP[matched] : null
   }
 
-  /* ── Navigation helpers ── */
   function goToBlog(e) {
     e?.preventDefault()
     setPage('blog')
@@ -252,9 +238,6 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  /* ════════════════════════════════════════
-     RENDER
-  ════════════════════════════════════════ */
   return (
     <div className="page">
       <div className="bg-glow" />
@@ -282,9 +265,24 @@ export default function App() {
               <div className="logo-pill"><span className="logo-dot" />Free tool · No signup required</div>
               <h1 className="h1">Your personalised AI tool stack — <span className="h1-accent">for YouTubers</span></h1>
               <p className="subtitle">Answer 4 quick questions. Get a curated list of the best AI tools matched to your channel type, budget, and goals.</p>
-              <button className="btn-primary btn-lg" onClick={() => { setPage('quiz'); track('quiz_started') }}>
-                Build my stack →
-              </button>
+
+              {/* ── CTA row: badge + button side by side ── */}
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px', flexWrap: 'wrap' }}>
+                <a
+                  href="https://peerpush.net/p/ai-stack-builder-for-youtubers-mppt"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <img
+                    src="https://peerpush.net/p/ai-stack-builder-for-youtubers-mppt/badge.png"
+                    alt="AI Stack Builder for YouTubers on PeerPush"
+                    style={{ width: '200px', display: 'block' }}
+                  />
+                </a>
+                <button className="btn-primary btn-lg" onClick={() => { setPage('quiz'); track('quiz_started') }}>
+                  Build my stack →
+                </button>
+              </div>
             </div>
 
             <div className="counter-card fade-up" style={{ animationDelay: '0.08s' }}>
@@ -325,7 +323,7 @@ export default function App() {
               </a>
             </div>
 
-            {/* ── Tool of the Month — auto-rotates by month ── */}
+            {/* ── Tool of the Month ── */}
             <ToolOfTheMonth />
 
             <div className="how-section fade-up" style={{ animationDelay: '0.3s' }}>
@@ -360,7 +358,6 @@ export default function App() {
               <span className="step-counter">AI Stack Builder</span>
             </div>
 
-            {/* Step 1 */}
             {step === 1 && (
               <div className="fade-up">
                 <h2 className="step-title">What kind of YouTuber are you?</h2>
@@ -382,7 +379,6 @@ export default function App() {
               </div>
             )}
 
-            {/* Step 2 */}
             {step === 2 && (
               <div className="fade-up">
                 <h2 className="step-title">What's your monthly tool budget?</h2>
@@ -409,7 +405,6 @@ export default function App() {
               </div>
             )}
 
-            {/* Step 3 */}
             {step === 3 && (
               <div className="fade-up">
                 <h2 className="step-title">What takes the most time?</h2>
@@ -429,7 +424,6 @@ export default function App() {
               </div>
             )}
 
-            {/* Step 4 */}
             {step === 4 && (
               <div className="fade-up">
                 <h2 className="step-title">How long have you been on YouTube?</h2>
@@ -456,7 +450,6 @@ export default function App() {
         {/* ══════════ RESULTS ══════════ */}
         {page === 'results' && stack && (
           <div className="results-wrap fade-up" style={{ marginTop: 36 }}>
-
             <div className="results-header">
               <h2 className="results-title">Your recommended AI stack</h2>
               <p className="results-sub">
@@ -464,7 +457,6 @@ export default function App() {
               </p>
             </div>
 
-            {/* Filter + Sort bar */}
             {stack.length > 2 && (
               <div className="filter-bar">
                 <span className="filter-label">Filter:</span>
@@ -486,7 +478,6 @@ export default function App() {
               </div>
             )}
 
-            {/* Tool cards */}
             {withAffiliate.length > 0 && (
               <>
                 <div className="section-label">Recommended tools</div>
@@ -515,7 +506,6 @@ export default function App() {
               </div>
             )}
 
-            {/* Summary */}
             <div className="summary-card">
               <div className="summary-item">
                 <div className="summary-label">Tools in your stack</div>
@@ -529,7 +519,6 @@ export default function App() {
               </div>
             </div>
 
-            {/* Share URL */}
             <div className="share-row">
               <span className="share-label">Share your stack:</span>
               <span className="share-url">{shareUrl}</span>
@@ -538,7 +527,6 @@ export default function App() {
               </button>
             </div>
 
-            {/* Email capture */}
             {!emailSent ? (
               <div className="email-capture">
                 <div className="email-capture-title">📬 Save your stack to your inbox</div>
@@ -568,7 +556,6 @@ export default function App() {
               </div>
             )}
 
-            {/* Bottom CTAs */}
             <div className="cta-row">
               <button className="btn-ghost" onClick={restart}>← Start over</button>
               <button className="btn-ghost" onClick={() => window.print()}>Print / save PDF</button>
