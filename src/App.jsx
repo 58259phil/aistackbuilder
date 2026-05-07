@@ -266,28 +266,28 @@ export default function App() {
               <h1 className="h1">Your personalised AI tool stack — <span className="h1-accent">for YouTubers</span></h1>
               <p className="subtitle">Answer 4 quick questions. Get a curated list of the best AI tools matched to your channel type, budget, and goals.</p>
 
-              {/* ── CTA row: badge + button side by side ── */}
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px', flexWrap: 'wrap' }}>
-                <a
-                  href="https://peerpush.net/p/ai-stack-builder-for-youtubers-mppt"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <img
-                    src="https://peerpush.net/p/ai-stack-builder-for-youtubers-mppt/badge.png"
-                    alt="AI Stack Builder for YouTubers on PeerPush"
-                    style={{ width: '200px', display: 'block' }}
-                  />
-                </a>
-                <button className="btn-primary btn-lg" onClick={() => { setPage('quiz'); track('quiz_started') }}>
-                  Build my stack →
-                </button>
-              </div>
+              <button className="btn-primary btn-lg" onClick={() => { setPage('quiz'); track('quiz_started') }}>
+                Build my stack →
+              </button>
             </div>
 
             <div className="counter-card fade-up" style={{ animationDelay: '0.08s' }}>
               <div className="counter-num">{stackCount.toLocaleString()}</div>
               <div className="counter-label">Stacks built by creators</div>
+            </div>
+
+            <div className="fade-up" style={{ display: 'flex', justifyContent: 'center', margin: '8px 0' }}>
+              <a
+                href="https://peerpush.net/p/ai-stack-builder-for-youtubers-mppt"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src="https://peerpush.net/p/ai-stack-builder-for-youtubers-mppt/badge.png"
+                  alt="AI Stack Builder for YouTubers on PeerPush"
+                  style={{ width: '200px', display: 'block' }}
+                />
+              </a>
             </div>
 
             <div className="stat-row">
