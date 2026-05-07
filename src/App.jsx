@@ -276,7 +276,7 @@ export default function App() {
               <div className="counter-label">Stacks built by creators</div>
             </div>
 
-            <div className="fade-up" style={{ display: 'flex', justifyContent: 'center', margin: '8px 0' }}>
+            <div className="fade-up" style={{ display: 'flex', justifyContent: 'flex-start', margin: '8px 0' }}>
               <a
                 href="https://peerpush.net/p/ai-stack-builder-for-youtubers-mppt"
                 target="_blank"
