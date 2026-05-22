@@ -263,7 +263,7 @@ export default function App() {
           <div className="fade-up">
             <div className="header">
               <div className="logo-pill"><span className="logo-dot" />Free tool · No signup required</div>
-              <h1 className="h1">Your personalised AI tool stack — <span className="h1-accent">for YouTubers</span></h1>
+              <h1 className="h1">Your personalised AI tool stack <span className="h1-accent">for YouTubers</span></h1>
               <p className="subtitle">Answer 4 quick questions. Get a curated list of the best AI tools matched to your channel type, budget, and goals.</p>
 
               <button className="btn-primary btn-lg" onClick={() => { setPage('quiz'); track('quiz_started') }}>
