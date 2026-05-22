@@ -295,16 +295,15 @@ export default function App() {
               >
                 <img
                   alt="AI Stack Builder - Compare & discover AI tools built for YouTube creators | Product Hunt"
-                  width="250"
-                  height="54"
                   src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1137974&theme=light&t=1779438219252"
+                  style={{ width: '200px', height: 'auto', display: 'block' }}
                 />
               </a>
               <a href="https://tinylaunch.com" target="_blank" rel="noopener">
                 <img
                   src="https://tinylaunch.com/tinylaunch_badge_featured_on.svg"
                   alt="TinyLaunch Badge"
-                  style={{ width: '202px', height: 'auto', display: 'block' }}
+                  style={{ width: '200px', height: 'auto', display: 'block' }}
                 />
               </a>
             </div>
