@@ -285,7 +285,7 @@ export default function App() {
                 <img
                   src="https://peerpush.net/p/ai-stack-builder-for-youtubers-mppt/badge.png"
                   alt="AI Stack Builder for YouTubers on PeerPush"
-                  style={{ height: '54px', width: 'auto', display: 'block' }}
+                  style={{ height: '40px', width: 'auto', display: 'block' }}
                 />
               </a>
               <a
@@ -296,14 +296,14 @@ export default function App() {
                 <img
                   alt="AI Stack Builder - Compare & discover AI tools built for YouTube creators | Product Hunt"
                   src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1137974&theme=light&t=1779438219252"
-                  style={{ height: '54px', width: 'auto', display: 'block' }}
+                  style={{ height: '40px', width: 'auto', display: 'block' }}
                 />
               </a>
               <a href="https://tinylaunch.com/launch/13163" target="_blank" rel="noopener">
                 <img
                   src="https://tinylaunch.com/tinylaunch_badge_featured_on.svg"
                   alt="TinyLaunch Badge"
-                  style={{ height: '54px', width: 'auto', display: 'block' }}
+                  style={{ height: '40px', width: 'auto', display: 'block' }}
                 />
               </a>
             </div>
