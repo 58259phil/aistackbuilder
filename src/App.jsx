@@ -300,7 +300,7 @@ export default function App() {
                   <img alt="AI Stack Builder on Product Hunt" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1137974&theme=light&t=1779438219252" style={{ height: '40px', width: 'auto', display: 'block' }} />
                 </a>
                 <a href="https://tinylaunch.com/launch/13163" target="_blank" rel="noopener">
-                  <img src="https://tinylaunch.com/tinylaunch_badge_featured_on.svg" alt="Featured on TinyLaunch" style={{ height: '44px', width: 'auto', display: 'block' }} />
+                  <img src="https://tinylaunch.com/tinylaunch_badge_featured_on.svg" alt="Featured on TinyLaunch" style={{ height: '42px', width: 'auto', display: 'block' }} />
                 </a>
               </div>
             </div>
