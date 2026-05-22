@@ -276,38 +276,6 @@ export default function App() {
               <div className="counter-label">Stacks built by creators</div>
             </div>
 
-            <div className="fade-up" style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', gap: '12px', margin: '8px 0', flexWrap: 'wrap' }}>
-              <a
-                href="https://peerpush.net/p/ai-stack-builder-for-youtubers-mppt"
-                target="_blank"
-                rel="noopener"
-              >
-                <img
-                  src="https://peerpush.net/p/ai-stack-builder-for-youtubers-mppt/badge.png"
-                  alt="AI Stack Builder for YouTubers on PeerPush"
-                  style={{ height: '40px', width: 'auto', display: 'block' }}
-                />
-              </a>
-              <a
-                href="https://www.producthunt.com/products/ai-stack-builder?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-ai-stack-builder"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  alt="AI Stack Builder - Compare & discover AI tools built for YouTube creators | Product Hunt"
-                  src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1137974&theme=light&t=1779438219252"
-                  style={{ height: '40px', width: 'auto', display: 'block' }}
-                />
-              </a>
-              <a href="https://tinylaunch.com/launch/13163" target="_blank" rel="noopener">
-                <img
-                  src="https://tinylaunch.com/tinylaunch_badge_featured_on.svg"
-                  alt="TinyLaunch Badge"
-                  style={{ height: '40px', width: 'auto', display: 'block' }}
-                />
-              </a>
-            </div>
-
             <div className="stat-row">
               {[
                 { n: '25+', label: 'AI tools rated & reviewed' },
@@ -319,6 +287,22 @@ export default function App() {
                   <div className="stat-label">{s.label}</div>
                 </div>
               ))}
+            </div>
+
+            {/* ── Featured on ── */}
+            <div className="fade-up" style={{ margin: '16px 0 8px' }}>
+              <p style={{ fontSize: '0.75rem', color: '#888', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>Featured on</p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+                <a href="https://peerpush.net/p/ai-stack-builder-for-youtubers-mppt" target="_blank" rel="noopener">
+                  <img src="https://peerpush.net/p/ai-stack-builder-for-youtubers-mppt/badge.png" alt="AI Stack Builder on PeerPush" style={{ height: '40px', width: 'auto', display: 'block' }} />
+                </a>
+                <a href="https://www.producthunt.com/products/ai-stack-builder?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-ai-stack-builder" target="_blank" rel="noopener noreferrer">
+                  <img alt="AI Stack Builder on Product Hunt" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1137974&theme=light&t=1779438219252" style={{ height: '40px', width: 'auto', display: 'block' }} />
+                </a>
+                <a href="https://tinylaunch.com/launch/13163" target="_blank" rel="noopener">
+                  <img src="https://tinylaunch.com/tinylaunch_badge_featured_on.svg" alt="Featured on TinyLaunch" style={{ height: '40px', width: 'auto', display: 'block' }} />
+                </a>
+              </div>
             </div>
 
             {/* ── Explore cards: Blog & Comparisons ── */}
