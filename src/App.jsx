@@ -299,7 +299,7 @@ export default function App() {
                   style={{ height: '54px', width: 'auto', display: 'block' }}
                 />
               </a>
-              <a href="https://tinylaunch.com" target="_blank" rel="noopener">
+              <a href="https://tinylaunch.com/launch/13163" target="_blank" rel="noopener">
                 <img
                   src="https://tinylaunch.com/tinylaunch_badge_featured_on.svg"
                   alt="TinyLaunch Badge"
