@@ -1,5 +1,4 @@
 // functions/subscribe.js — Cloudflare Pages Function
-// Replaces netlify/functions/subscribe.js
 
 export async function onRequestPost(context) {
   const { request, env } = context
@@ -21,6 +20,9 @@ export async function onRequestPost(context) {
   const fromEmail = env.FROM_EMAIL || 'hello@aistackbuilder.tech'
   const notifyEmail = env.TO_LIST_EMAIL
 
+  // AI Stack Builder segment ID in Resend
+  const AUDIENCE_ID = 'f4be9252-c898-4aa0-8e2d-97c742062033'
+
   if (!apiKey) {
     console.error('RESEND_API_KEY not set')
     return new Response('Email service not configured', { status: 500 })
@@ -29,6 +31,19 @@ export async function onRequestPost(context) {
   const toolListHtml = tools.length > 0
     ? tools.map(t => `<li style="margin-bottom:8px;"><strong>${t.name}</strong> — ${t.desc} <span style="color:#888;">(${t.price === 0 ? 'Free' : `$${t.price}/mo`})</span></li>`).join('')
     : '<li>No tools in stack</li>'
+
+  // Add contact to Resend AI Stack Builder audience
+  await fetch(`https://api.resend.com/audiences/${AUDIENCE_ID}/contacts`, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      email,
+      unsubscribed: false,
+    }),
+  })
 
   // Send welcome email to subscriber
   const welcomeRes = await fetch('https://api.resend.com/emails', {
