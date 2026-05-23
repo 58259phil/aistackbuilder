@@ -270,7 +270,7 @@ function StackCTACard({ heading, subtext, btnText, linkText, onBack }) {
     <div className="stack-cta-card">
       <p className="stack-cta-heading">{heading}</p>
       <p className="stack-cta-sub">{subtext}</p>
-      <button className="btn-primary stack-cta-btn" onClick={onBack}>{btnText}</button>
+      <button className="btn-primary stack-cta-btn" onClick={onBack}><span className="pulse-text">{btnText}</span></button>
       <a href="#" className="stack-cta-link" onClick={(e) => { e.preventDefault(); onBack(); }}>{linkText}</a>
     </div>
   )
@@ -416,7 +416,7 @@ export function ComparisonPost({ postId, onBack, onComparisons }) {
 
       <div className="blog-post-cta">
         <p>Not sure which tools are right for your channel?</p>
-        <button className="btn-primary" onClick={onBack}>Build my free AI stack →</button>
+        <button className="btn-primary" onClick={onBack}><span className="pulse-text">Build my free AI stack →</span></button>
       </div>
     </div>
   )
