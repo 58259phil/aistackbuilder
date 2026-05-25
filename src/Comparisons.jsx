@@ -3,7 +3,7 @@
 export const COMPARISONS = [
   {
     id: 'elevenlabs-vs-murf-ai',
-    title: 'ElevenLabs vs Murf AI (2026): Which AI Voice Tool Is Right for YouTubers?',
+    title: 'ElevenLabs vs Murf AI for YouTubers 2026',
     slug: 'elevenlabs-vs-murf-ai',
     date: 'April 2026',
     readTime: '9 min read',
@@ -51,7 +51,7 @@ export const COMPARISONS = [
   },
   {
     id: 'opus-clip-vs-repurpose-io',
-    title: 'Opus Clip vs Repurpose.io (2026): Which Repurposing Tool Should YouTubers Use?',
+    title: 'Opus Clip vs Repurpose.io for YouTubers',
     slug: 'opus-clip-vs-repurpose-io',
     date: 'April 2026',
     readTime: '8 min read',
@@ -94,7 +94,7 @@ export const COMPARISONS = [
   },
   {
     id: 'submagic-vs-descript',
-    title: 'Submagic vs Descript (2026): Caption Tool or Full Editor — Which Do You Need?',
+    title: 'Submagic vs Descript: Caption Tool Review',
     slug: 'submagic-vs-descript',
     date: 'April 2026',
     readTime: '7 min read',
@@ -136,7 +136,7 @@ export const COMPARISONS = [
   },
   {
     id: 'vidiq-vs-tubebuddy',
-    title: 'VidIQ vs TubeBuddy (2026): Which YouTube SEO Tool Actually Grows Your Channel?',
+    title: 'VidIQ vs TubeBuddy: YouTube SEO Compared',
     slug: 'vidiq-vs-tubebuddy',
     date: 'April 2026',
     readTime: '8 min read',
@@ -179,7 +179,7 @@ export const COMPARISONS = [
   },
   {
     id: 'heygen-vs-ai-studios',
-    title: 'HeyGen vs AI Studios (2026): Which AI Avatar Tool Is Better for YouTubers?',
+    title: 'HeyGen vs AI Studios for YouTubers 2026',
     slug: 'heygen-vs-ai-studios',
     date: 'April 2026',
     readTime: '7 min read',
@@ -219,7 +219,7 @@ export const COMPARISONS = [
   },
   {
     id: 'koala-ai-vs-chatgpt',
-    title: 'Koala AI vs ChatGPT for YouTube Scripts (2026): Which One Should You Pay For?',
+    title: 'Koala AI vs ChatGPT for YouTube Scripts',
     slug: 'koala-ai-vs-chatgpt',
     date: 'April 2026',
     readTime: '9 min read',

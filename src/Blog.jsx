@@ -68,7 +68,7 @@ export const POSTS = [
   },
   {
     id: 'how-to-start-faceless-youtube-channel',
-    title: 'How to Start a Faceless YouTube Channel with AI in 2025',
+    title: 'Start a Faceless YouTube Channel with AI',
     slug: 'how-to-start-faceless-youtube-channel',
     date: 'April 2025',
     readTime: '9 min read',
@@ -180,7 +180,7 @@ export const POSTS = [
   },
   {
     id: 'how-to-make-youtube-videos-without-face',
-    title: 'How to Make YouTube Videos Without Showing Your Face',
+    title: 'How to Make YouTube Videos Without a Face',
     slug: 'how-to-make-youtube-videos-without-face',
     date: 'April 2025',
     readTime: '8 min read',
@@ -229,7 +229,7 @@ export const POSTS = [
   },
   {
     id: 'how-to-repurpose-youtube-to-tiktok',
-    title: 'How to Repurpose YouTube Videos to TikTok Automatically',
+    title: 'How to Repurpose YouTube Videos to TikTok',
     slug: 'how-to-repurpose-youtube-to-tiktok',
     date: 'April 2025',
     readTime: '7 min read',
@@ -414,7 +414,7 @@ export const NEW_POSTS = [
   },
   {
     id: 'how-to-use-ai-write-youtube-scripts',
-    title: 'How to Use AI to Write YouTube Scripts Faster in 2026',
+    title: 'Use AI to Write YouTube Scripts Faster',
     slug: 'how-to-use-ai-write-youtube-scripts',
     date: 'April 2026',
     readTime: '7 min read',
@@ -439,7 +439,7 @@ export const NEW_POSTS = [
   },
   {
     id: 'best-free-ai-tools-youtubers',
-    title: 'Best Free AI Tools for YouTubers in 2026 (No Budget Needed)',
+    title: 'Best Free AI Tools for YouTubers 2026',
     slug: 'best-free-ai-tools-youtubers',
     date: 'April 2026',
     readTime: '6 min read',
@@ -490,7 +490,7 @@ export const NEW_POSTS = [
   },
   {
     id: 'best-ai-tools-youtube-seo',
-    title: 'Best AI Tools for YouTube SEO and Keyword Research in 2026',
+    title: 'Best AI Tools for YouTube SEO in 2026',
     slug: 'best-ai-tools-youtube-seo',
     date: 'April 2026',
     readTime: '7 min read',
@@ -513,7 +513,7 @@ export const NEW_POSTS = [
   },
   {
     id: 'how-to-create-youtube-channel-no-money',
-    title: 'How to Create a YouTube Channel with No Money Using AI in 2026',
+    title: 'Create a YouTube Channel with AI for Free',
     slug: 'how-to-create-youtube-channel-no-money',
     date: 'April 2026',
     readTime: '7 min read',
@@ -541,7 +541,7 @@ export const NEW_POSTS = [
   },
   {
     id: 'best-ai-caption-generators-youtube',
-    title: 'Best AI Caption Generators for YouTube Videos in 2026',
+    title: 'Best AI Caption Generators for YouTube',
     slug: 'best-ai-caption-generators-youtube',
     date: 'April 2026',
     readTime: '6 min read',
@@ -565,7 +565,7 @@ export const NEW_POSTS = [
   },
   {
     id: 'how-to-use-elevenlabs-youtube',
-    title: 'How to Use ElevenLabs for YouTube Voiceover (Step by Step Guide)',
+    title: 'ElevenLabs for YouTube Voiceover: Guide',
     slug: 'how-to-use-elevenlabs-youtube',
     date: 'April 2026',
     readTime: '8 min read',
@@ -591,7 +591,7 @@ export const NEW_POSTS = [
   },
   {
     id: 'best-ai-tools-youtube-0-subscribers',
-    title: 'Best AI Tools for Growing a YouTube Channel from 0 Subscribers in 2026',
+    title: 'YouTube Growth from Zero: Best AI Tools',
     slug: 'best-ai-tools-youtube-0-subscribers',
     date: 'April 2026',
     readTime: '7 min read',
