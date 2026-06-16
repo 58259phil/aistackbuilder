@@ -117,7 +117,12 @@ export default function App() {
     } else if (pathname === '/blog' || pathname === '/blog/') {
       setPage('blog')
     } else if (compMatch) {
-      setCompPostId(compMatch[1])
+      // Redirect old HeyGen comparison slug to the renamed Synthesia comparison
+      const slug = compMatch[1] === 'heygen-vs-ai-studios' ? 'synthesia-vs-ai-studios' : compMatch[1]
+      if (compMatch[1] === 'heygen-vs-ai-studios') {
+        window.history.replaceState({}, '', `/compare/${slug}/`)
+      }
+      setCompPostId(slug)
       setPage('comppost')
     } else if (pathname === '/compare' || pathname === '/compare/') {
       setPage('comparisons')
